@@ -2,196 +2,74 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
-import { Image } from 'astro:assets';
-import { getCollection } from 'astro:content';
-import bibFileRaw from '../data/publications.bib?raw';
+import { SITE_TITLE, SITE_DESCRIPTION, SOCIAL_LINKS } from '../consts';
 import { url } from '../utils/paths';
-
-const posts = (await getCollection('blog')).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-).slice(0, 3);
-
-interface Author {
-	first: string;
-	last: string;
-}
-
-interface BibEntry {
-	type: string;
-	key: string;
-	fields: Record<string, string>;
-	authors: Author[];
-}
-
-function parseBibTeX(input: string): BibEntry[] {
-    const entries: BibEntry[] = [];
-    const rawEntries = input.split(/@(\w+)\s*\{/g).slice(1);
-
-    for (let i = 0; i < rawEntries.length; i += 2) {
-        const type = rawEntries[i].trim();
-        const body = rawEntries[i+1];
-        if (!body) continue;
-
-        const keyMatch = body.match(/^\s*([^,]+),/);
-        const key = keyMatch ? keyMatch[1].trim() : 'unknown';
-        
-        const fields: Record<string, string> = { title: "Untitled", year: "0000" };
-        const fieldRegex = /(\w+)\s*=\s*(?:\{((?:[^{}]|{[^{}]*})*)\}|"((?:[^"]|\\")*)"|(\d+))/g;
-        
-        let match;
-        while ((match = fieldRegex.exec(body)) !== null) {
-            const fieldKey = match[1].toLowerCase();
-            const val = match[2] || match[3] || match[4] || "";
-            fields[fieldKey] = val.replace(/\s+/g, ' ').trim();
-        }
-
-        let authors: Author[] = [];
-        if (fields.author) {
-            authors = fields.author.split(/\s+and\s+/i).map(str => {
-                const parts = str.split(',');
-                if (parts.length > 1) {
-                    return { first: parts[1].trim(), last: parts[0].trim() };
-                } else {
-                    const names = str.trim().split(' ');
-                    const last = names.pop() || "";
-                    const first = names.join(' ');
-                    return { first, last };
-                }
-            });
-        }
-        entries.push({ type, key, fields, authors });
-    }
-    return entries;
-}
-
-const publications = parseBibTeX(bibFileRaw).sort((a, b) => {
-    return (parseInt(b.fields.year) || 0) - (parseInt(a.fields.year) || 0);
-}).slice(0, 3);
-
-const formatAuthor = (auth: Author) => {
-    return auth.first ? `${auth.first} ${auth.last}` : auth.last;
-};
 ---
-
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<style>
-			.hero {
-				display: flex;
-				align-items: center;
-				gap: 4rem;
-				padding: 4rem 0;
-				margin-bottom: 2rem;
-			}
-			.hero-content { flex: 3; }
-			.hero-image { 
-				flex: 2; 
-				text-align: center;
-                position: relative;
-			}
-			.hero-image img {
-				width: 280px;
-				height: 280px;
-				object-fit: cover;
-				border-radius: 50%;
-				border: 6px solid var(--color-bg);
-				box-shadow: 0 0 0 1px var(--color-border), var(--shadow-lg);
-			}
-            
-            .pub-mini-item {
-                margin-bottom: 1.5rem;
-                padding-bottom: 1.5rem;
-                border-bottom: 1px solid var(--color-border);
-            }
-            .pub-mini-item:last-child { border-bottom: none; margin-bottom: 0; }
-            .pub-title { font-weight: 700; color: var(--color-text-main); display: block; margin-bottom: 0.25rem; font-family: var(--font-serif); font-size: 1.1rem; }
-            .pub-meta { font-size: 0.9rem; color: var(--color-text-muted); }
+<head>
+  <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  <style>
+    .hero{display:grid;grid-template-columns:1.5fr .8fr;gap:4rem;align-items:center;padding:5rem 0 4rem}
+    .eyebrow{color:var(--color-accent);font-size:.78rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase}
+    .hero h1{font-size:clamp(3rem,8vw,5.5rem);letter-spacing:-.055em;line-height:.94;margin:.7rem 0 1.25rem}
+    .role{font-family:var(--font-serif);font-size:1.35rem;color:var(--color-text-main);margin:0 0 1.25rem}
+    .intro{font-size:1.08rem;max-width:650px;line-height:1.75}
+    .actions{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:2rem}
+    .portrait{aspect-ratio:1;border-radius:28px;background:linear-gradient(145deg,#0b3954,#087e8b);display:grid;place-items:center;color:#fff;font-family:var(--font-serif);font-size:5.5rem;box-shadow:var(--shadow-lg);position:relative;overflow:hidden}
+    .portrait:after{content:"";position:absolute;inset:12px;border:1px solid rgba(255,255,255,.35);border-radius:20px}
+    .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--color-border);border:1px solid var(--color-border);border-radius:16px;overflow:hidden;margin:1rem 0 4rem}
+    .fact{background:var(--color-bg);padding:1.5rem}.fact strong{display:block;font-family:var(--font-serif);font-size:1.25rem}.fact span{font-size:.85rem;color:var(--color-text-muted)}
+    .section{padding:2rem 0 3rem}.section h2{margin-top:0}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+    .card{border:1px solid var(--color-border);border-radius:14px;padding:1.4rem;background:var(--color-bg-offset)}
+    .card small{color:var(--color-accent);font-weight:700;text-transform:uppercase;letter-spacing:.08em}.card h3{font-size:1.15rem;margin:.6rem 0}.card p{font-size:.92rem;margin:0}
+    .connect{display:flex;gap:1rem;flex-wrap:wrap}
+    @media(max-width:760px){.hero{grid-template-columns:1fr;padding:3rem 0}.portrait{max-width:300px}.facts,.cards{grid-template-columns:1fr}.hero h1{font-size:3.5rem}}
+  </style>
+</head>
+<body>
+  <Header />
+  <main>
+    <section class="hero">
+      <div>
+        <span class="eyebrow">Researcher · Engineer · Builder</span>
+        <h1>Senith<br/>Jayakody</h1>
+        <p class="role">Research Assistant at MARC, University of Peradeniya</p>
+        <p class="intro">I build intelligent sensing systems at the intersection of machine learning, signal processing, computational imaging, and embedded hardware—translating research into robust tools for healthcare, agriculture, and environmental monitoring.</p>
+        <div class="actions">
+          <a class="btn" href={url('/publications')}>Explore publications</a>
+          <a class="btn btn-outline" href={url('/Senith_CV_2026.pdf')} target="_blank">Download CV</a>
+        </div>
+      </div>
+      <div class="portrait" aria-label="Senith Jayakody monogram">SJ</div>
+    </section>
 
-			.hero-buttons {
-				display: flex;
-				gap: 1rem;
-				flex-wrap: wrap;
-			}
-			@media (max-width: 768px) {
-				.hero { flex-direction: column-reverse; text-align: center; padding: 2rem 0; gap: 2rem; }
-                .hero-image img { width: 200px; height: 200px; }
-                .hero-buttons { justify-content: center; }
-			}
-		</style>
-	</head>
-	<body>
-		<Header />
-		<main>
-			<section class="hero">
-				<div class="hero-content">
-					<h1 style="margin-bottom: 0.5rem; font-size: 3rem;">Friedrich Nietzsche</h1>
-					<h2 style="font-weight: 400; color: var(--color-text-muted); margin-bottom: 1.5rem; font-family: var(--font-sans); text-transform: uppercase; letter-spacing: 0.05em; font-size: 1rem; border-bottom: none; padding-bottom: 0; display: block; margin-top: 0;">
-						Professor of Philosophy<br/>
-						Institute for Advanced Study
-					</h2>
-					<p style="font-size: 1.1rem; line-height: 1.7; margin-bottom: 2rem;">
-						Welcome to my academic portfolio. My research focuses on <strong>Philosophy of Culture, Morality, and the Will to Power</strong>. I lead the Philosophy Group where we challenge conventional thinking and explore the transformation of human values and civilization.
-					</p>
-					<div class="hero-buttons">
-						<a href={url('/publications')} class="btn">View Publications</a>
-						<a href={url('/projects')} class="btn btn-outline">Current Projects</a>
-					</div>
-				</div>
-				<div class="hero-image">
-					<Image src={url('/nietzsche.jpg')} width={280} height={280} alt="Professor Portrait" fetchpriority="high" decoding="async" />
-				</div>
-			</section>
+    <div class="facts">
+      <div class="fact"><strong>5 publications</strong><span>Biomedical AI, imaging, and generative audio</span></div>
+      <div class="fact"><strong>3.85 GPA</strong><span>B.Sc. Eng. (Hons.), University of Peradeniya</span></div>
+      <div class="fact"><strong>2 national awards</strong><span>Manamperi Award and Sahasak Nimavum</span></div>
+    </div>
 
-			<hr style="margin: 3rem 0; border-top: 1px solid var(--color-border);" />
+    <section class="section">
+      <span class="eyebrow">Research focus</span>
+      <h2>Engineering reliable AI from signal to system</h2>
+      <div class="cards">
+        <article class="card"><small>Biomedical AI</small><h3>Preterm birth prediction</h3><p>Interpretable prediction from uterine electrophysiological signals, with dedicated acquisition hardware for clinically useful datasets.</p></article>
+        <article class="card"><small>Computational imaging</small><h3>Multispectral sensing</h3><p>Field-deployable imaging and machine-learning pipelines for soil composition, moisture, and environmental monitoring.</p></article>
+        <article class="card"><small>Edge intelligence</small><h3>Embedded sensing systems</h3><p>Hardware–software co-design using Raspberry Pi, ESP32, NRF5340, sensor integration, calibration, and real-time signal processing.</p></article>
+      </div>
+    </section>
 
-			<div class="grid-2" style="gap: 4rem; margin-top: 0;">
-                <section>
-                    <h2 style="margin-top: 0;">Selected Publications</h2>
-                    <div class="publication-list">
-                        {publications.length > 0 ? publications.map((pub) => (
-                            <div class="pub-mini-item">
-                                <span class="pub-title">{pub.fields.title.replace(/[{}]/g, '')}</span>
-                                <div class="pub-meta">
-                                    {pub.authors.map(a => formatAuthor(a)).join(', ')}
-                                    <br/>
-                                    <span style="font-style: italic; color: var(--color-accent);">
-                                        {(pub.fields.journal || pub.fields.booktitle || pub.fields.publisher || "Preprint").replace(/[{}]/g, '')}
-                                    </span>
-                                    {pub.fields.year && <span>, {pub.fields.year}</span>}
-                                </div>
-                            </div>
-                        )) : <p>No publications found.</p>}
-                    </div>
-                    <div style="margin-top: 1.5rem;">
-                        <a href={url('/publications')} style="font-weight: 600;">View Full List &rarr;</a>
-                    </div>
-                </section>
-
-                <section>
-                    <h2 style="margin-top: 0;">Lab News</h2>
-                    <ul style="list-style: none; padding: 0;">
-                        {posts.map((post) => (
-                            <li style="margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px dashed var(--color-border);">
-                                <a href={url(`/blog/${post.id}/`)} style="display: block; font-family: var(--font-serif); font-size: 1.1rem; font-weight: 600; color: var(--color-text-main); margin-bottom: 0.25rem;">
-                                    {post.data.title}
-                                </a>
-                                <small style="color: var(--color-text-muted); text-transform: uppercase; font-size: 0.8rem;">
-                                    {post.data.pubDate.toLocaleDateString('en-us', {
-                                        year: 'numeric',
-                                        month: 'short',
-                                        day: 'numeric',
-                                    })}
-                                </small>
-                            </li>
-                        ))}
-                    </ul>
-                    <a href={url('/blog')} style="font-weight: 600;">View Blog &rarr;</a>
-                </section>
-            </div>
-		</main>
-		<Footer />
-	</body>
+    <section class="section">
+      <span class="eyebrow">Currently</span>
+      <h2>Research at MARC</h2>
+      <p>Leading work on spectrotemporal features and robust models for preterm birth prediction; developing biomedical acquisition hardware; supervising multispectral imaging research; and improving a commercially scalable, field-deployable MSI platform.</p>
+      <div class="connect">
+        {SOCIAL_LINKS.map(link => <a href={link.href} target={link.href.startsWith('mailto:') ? undefined : '_blank'}>{link.label} ↗</a>)}
+      </div>
+    </section>
+  </main>
+  <Footer />
+</body>
 </html>

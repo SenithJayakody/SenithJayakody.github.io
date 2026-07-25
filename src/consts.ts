@@ -1,18 +1,19 @@
 // Place any global data in this file.
 // You can import this data from anywhere in your site by using the `import` keyword.
 
-export const SITE_TITLE = 'Friedrich Nietzsche';
-export const SITE_DESCRIPTION = 'The academic portfolio of Friedrich Nietzsche.';
+export const SITE_TITLE = 'Senith Jayakody';
+export const SITE_DESCRIPTION = 'Researcher in machine learning, signal processing, multispectral imaging, and biomedical sensing.';
 
-export const CV_URL = 'https://shravangoswami.com/resume.pdf';
+export const CV_URL = '/Senith_CV_2026.pdf';
 
 export const CONTACT = {
-  organization: 'Shravan Goswami',
+  organization: 'Multidisciplinary AI Research Centre (MARC)',
   addressLines: [
-    'Creator of Astro Scholar',
+    'University of Peradeniya, Sri Lanka',
   ],
   emails: [
-    'contact@shravangoswami.com',
+    'senithjayakody2000@gmail.com',
+    'e19151@eng.pdn.ac.lk',
   ],
 };
 
@@ -25,23 +26,23 @@ export const SOCIAL_LINKS: ReadonlyArray<{
 }> = [
   {
     label: 'GitHub',
-    href: 'https://github.com/shravanngoswamii/astro-scholar',
+    href: 'https://github.com/SenithJayakody',
     icon: 'github',
   },
   {
     label: 'Email',
-    href: 'mailto:contact@shravangoswami.com',
+    href: 'mailto:senithjayakody2000@gmail.com',
     icon: 'email',
   },
   {
     label: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/shravangoswami/',
+    href: 'https://lk.linkedin.com/in/senith-jayakody-09646b25b',
     icon: 'linkedin',
   },
   {
-    label: 'X',
-    href: 'https://x.com/shravangoswamii',
-    icon: 'twitter',
+    label: 'Google Scholar',
+    href: 'https://scholar.google.com/citations?user=bFCE8xoAAAAJ&hl=en',
+    icon: 'scholar',
   },
 ];
 

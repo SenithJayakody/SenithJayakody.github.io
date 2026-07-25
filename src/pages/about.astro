@@ -1,31 +1,52 @@
 ---
-import AboutHeroImage from '../assets/blog-placeholder-about.jpg';
-import Layout from '../layouts/BlogPost.astro';
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE } from '../consts';
 ---
+<!doctype html>
+<html lang="en">
+<head>
+  <BaseHead title={`About | ${SITE_TITLE}`} description="Education, experience, skills, and achievements of Senith Jayakody." />
+  <style>
+    .intro{max-width:760px;padding:3rem 0 2rem}.intro h1{font-size:clamp(3rem,7vw,5rem);letter-spacing:-.04em}.lead{font-size:1.2rem;line-height:1.8}
+    .layout{display:grid;grid-template-columns:1.6fr .8fr;gap:4rem}.item{padding:1.3rem 0;border-bottom:1px solid var(--color-border)}.item h3{margin:.2rem 0;font-size:1.2rem}.date{font-size:.78rem;color:var(--color-accent);font-weight:700;text-transform:uppercase;letter-spacing:.08em}.item p{margin:.4rem 0;font-size:.95rem}
+    .tags{display:flex;flex-wrap:wrap;gap:.5rem}.tag{border:1px solid var(--color-border);border-radius:999px;padding:.3rem .7rem;font-size:.82rem;color:var(--color-text-muted)}
+    @media(max-width:760px){.layout{grid-template-columns:1fr;gap:1rem}}
+  </style>
+</head>
+<body>
+<Header />
+<main>
+  <section class="intro">
+    <span class="date">About</span>
+    <h1>Research grounded in real-world sensing.</h1>
+    <p class="lead">I am a Research Assistant at the Multidisciplinary AI Research Centre, University of Peradeniya. My work connects sensing hardware, signal processing, and predictive modelling to create robust and interpretable systems for healthcare, agriculture, and environmental monitoring.</p>
+  </section>
+  <div class="layout">
+    <div>
+      <h2>Experience</h2>
+      <article class="item"><span class="date">2025 — Present</span><h3>Research Assistant · MARC, University of Peradeniya</h3><p>Leading preterm-birth prediction research, developing biomedical acquisition hardware, supervising junior researchers, and advancing a field-deployable multispectral imaging platform.</p></article>
+      <article class="item"><span class="date">2023 — 2025</span><h3>Undergraduate Researcher · MARC</h3><p>Developed MSI models for soil moisture, soil texture, and Microcystis toxicity while improving lighting, electronics, calibration, and Raspberry Pi integration.</p></article>
+      <article class="item"><span class="date">Jul — Oct 2024</span><h3>R&D Intern · Swartup Pvt Ltd</h3><p>Migrated embedded systems from ESP32 FreeRTOS to NRF5340 Zephyr and designed modular LoRa- and GSM-capable hardware.</p></article>
+      <article class="item"><span class="date">Jul — Oct 2023</span><h3>R&D Intern · Sri Lanka Telecom Digital Lab</h3><p>Developed IoT environmental monitoring systems with ESP32, MQTT, and integrated sensors.</p></article>
 
-<Layout
-	title="About Friedrich Nietzsche"
-	description="Learn about the life and profound contributions of Friedrich Nietzsche, the visionary philosopher who revolutionized Western thought and challenged conventional morality."
-	pubDate={new Date('October 15 1844')}
-	heroImage={AboutHeroImage}
->
-	<p>
-		Friedrich Wilhelm Nietzsche (October 15, 1844 – August 25, 1900) was a German philosopher, cultural critic, composer, poet, and philologist. His philosophical works on morality, the will to power, and the concept of the Übermensch have exerted a profound influence on Western philosophy, literature, psychology, and politics. He is widely recognized as one of the most influential philosophers of all time, whose ideas have fundamentally shaped modern intellectual discourse and challenged fundamental assumptions about morality, truth, and human nature.
-	</p>
+      <h2>Education</h2>
+      <article class="item"><span class="date">2019 — 2025</span><h3>B.Sc. Eng. (Hons.) · University of Peradeniya</h3><p>Electrical and Electronic Engineering · GPA 3.85</p></article>
+    </div>
+    <aside>
+      <h2>Recognition</h2>
+      <article class="item"><span class="date">2025</span><h3>Second Runner-Up, Manamperi Award</h3><p>Best Undergraduate Project in Sri Lanka for multispectral imaging research.</p></article>
+      <article class="item"><span class="date">2024</span><h3>Silver Award, Sahasak Nimavum</h3><p>Engineering category, Inventions and Innovations Competition.</p></article>
+      <article class="item"><span class="date">2023</span><h3>2nd Place, ACES Hackathon</h3></article>
 
-	<p>
-		Nietzsche was born in Röcken, a small village near Lützen in the Prussian Province of Saxony. His father, Carl Ludwig Nietzsche, was a Lutheran minister, and his mother, Franziska Oehler, came from a devout Protestant family. He received his education at several prestigious institutions, culminating in his studies at the University of Bonn and later at the University of Leipzig, where he studied classical philology. In 1869, at the remarkably young age of 24, Nietzsche was appointed professor of classical philology at the University of Basel in Switzerland, a position he obtained without even holding a doctorate, based on the strength of his scholarly work and recommendations.
-	</p>
-
-	<p>
-		Nietzsche's philosophical career was marked by profound intellectual independence and radical innovation. He published numerous groundbreaking works including "The Birth of Tragedy" (1872), "Thus Spoke Zarathustra" (1883-1885), "Beyond Good and Evil" (1886), and "On the Genealogy of Morals" (1887). His ideas about the reevaluation of all values, the critique of Judeo-Christian morality, and the vision of the Übermensch presented a fundamental challenge to Victorian sensibilities and conventional philosophical thought. His concept of "will to power" offered a revolutionary perspective on human motivation and the driving forces behind human behavior and culture.
-	</p>
-
-	<p>
-		Due to deteriorating health, Nietzsche resigned from his academic position in 1879 and spent the following years traveling throughout Europe, living a life of philosophical contemplation and creative productivity. Despite chronic illness that plagued him throughout his later years, he produced some of his most significant works during this period of withdrawal from academic life. He lived in various locations including Basel, Genoa, Nice, and Turin, finding inspiration in different environments while continuing his prolific philosophical and literary output.
-	</p>
-
-	<p>
-		In 1889, Nietzsche suffered a mental breakdown in Turin, Italy, from which he never fully recovered. He lived his remaining years under the care of his mother and sister in Weimar, Germany. He died in Weimar on August 25, 1900, at age 55. His intellectual legacy has profoundly influenced philosophy, psychology, literature, theology, and cultural criticism throughout the twentieth and twenty-first centuries. His ideas continue to inspire and provoke critical thinking about the nature of morality, human excellence, and the transformation of human civilization.
-	</p>
-</Layout>
+      <h2>Technical toolkit</h2>
+      <div class="tags">
+        {['Python','C/C++','MATLAB','PyTorch','TensorFlow','scikit-learn','OpenCV','Signal processing','MFCC','Raspberry Pi','ESP32','NRF5340','Linux','Git','MQTT','Circuit design'].map(skill => <span class="tag">{skill}</span>)}
+      </div>
+    </aside>
+  </div>
+</main>
+<Footer />
+</body>
+</html>

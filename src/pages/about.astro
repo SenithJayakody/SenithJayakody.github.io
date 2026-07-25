@@ -12,7 +12,8 @@ import { SITE_TITLE } from '../consts';
     .intro{max-width:760px;padding:3rem 0 2rem}.intro h1{font-size:clamp(3rem,7vw,5rem);letter-spacing:-.04em}.lead{font-size:1.2rem;line-height:1.8}
     .layout{display:grid;grid-template-columns:1.6fr .8fr;gap:4rem}.item{padding:1.3rem 0;border-bottom:1px solid var(--color-border)}.item h3{margin:.2rem 0;font-size:1.2rem}.date{font-size:.78rem;color:var(--color-accent);font-weight:700;text-transform:uppercase;letter-spacing:.08em}.item p{margin:.4rem 0;font-size:.95rem}
     .tags{display:flex;flex-wrap:wrap;gap:.5rem}.tag{border:1px solid var(--color-border);border-radius:999px;padding:.3rem .7rem;font-size:.82rem;color:var(--color-text-muted)}
-    @media(max-width:760px){.layout{grid-template-columns:1fr;gap:1rem}}
+    .results{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:1rem}.result-card{border:1px solid var(--color-border);border-radius:12px;padding:1rem}.result-card strong{display:block;color:var(--color-text-main)}.result-card p{margin:.35rem 0;font-size:.9rem}.document-links{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1rem}
+    @media(max-width:760px){.layout{grid-template-columns:1fr;gap:1rem}.results{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
@@ -32,7 +33,30 @@ import { SITE_TITLE } from '../consts';
       <article class="item"><span class="date">Jul — Oct 2023</span><h3>R&D Intern · Sri Lanka Telecom Digital Lab</h3><p>Developed IoT environmental monitoring systems with ESP32, MQTT, and integrated sensors.</p></article>
 
       <h2>Education</h2>
-      <article class="item"><span class="date">2019 — 2025</span><h3>B.Sc. Eng. (Hons.) · University of Peradeniya</h3><p>Electrical and Electronic Engineering · GPA 3.85</p></article>
+      <article class="item">
+        <span class="date">2019 — 2025</span>
+        <h3>B.Sc. Eng. (Hons.) · University of Peradeniya</h3>
+        <p>Electrical and Electronic Engineering · First Class Honours · GPA 3.85 · Degree effective 19 August 2025.</p>
+        <div class="document-links"><a class="btn btn-outline" href="/documents/Academic-Transcript.pdf" target="_blank">View academic transcript</a></div>
+      </article>
+      <article class="item">
+        <span class="date">2005 — 2019</span>
+        <h3>Trinity College Kandy</h3>
+        <p>Primary and secondary education, completing the G.C.E. Ordinary Level and Advanced Level examinations.</p>
+        <div class="results">
+          <div class="result-card">
+            <strong>G.C.E. Advanced Level · 2019</strong>
+            <p>Physical Science stream: Combined Mathematics — A, Physics — A, Chemistry — A.</p>
+            <p>General English — A · Common General Test — 74 · Z-score — 2.1582.</p>
+            <a href="/documents/gce-al-result-sheet.pdf" target="_blank">View result sheet ↗</a>
+          </div>
+          <div class="result-card">
+            <strong>G.C.E. Ordinary Level · 2016</strong>
+            <p>Nine A grades, including Mathematics, Science, English, History, Buddhism, Sinhala, Music, Civic Education, and Health & Physical Education.</p>
+            <a href="/documents/gce-ol-result-sheet.pdf" target="_blank">View result sheet ↗</a>
+          </div>
+        </div>
+      </article>
     </div>
     <aside>
       <h2>Recognition</h2>

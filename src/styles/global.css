@@ -20,7 +20,7 @@
 	--color-bg-mobile-menu: rgba(255, 255, 255, 0.95);
 
 	/* Spacing & UI */
-	--max-width: 960px;
+	--max-width: 1080px;
 	--radius: 8px;
 	--shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
 	--shadow-md: 0 4px 6px rgba(0, 0, 0, 0.08);

@@ -17,6 +17,7 @@ import { url } from '../utils/paths';
     .intro{font-size:1.08rem;max-width:650px;line-height:1.75}
     .actions{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:2rem}
     .portrait{aspect-ratio:1;border-radius:28px;background:linear-gradient(145deg,#0b3954,#087e8b);display:grid;place-items:center;color:#fff;font-family:var(--font-serif);font-size:5.5rem;box-shadow:var(--shadow-lg);position:relative;overflow:hidden}
+    .portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
     .portrait:after{content:"";position:absolute;inset:12px;border:1px solid rgba(255,255,255,.35);border-radius:20px}
     .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--color-border);border:1px solid var(--color-border);border-radius:16px;overflow:hidden;margin:1rem 0 4rem}
     .fact{background:var(--color-bg);padding:1.5rem}.fact strong{display:block;font-family:var(--font-serif);font-size:1.25rem}.fact span{font-size:.85rem;color:var(--color-text-muted)}
@@ -42,7 +43,10 @@ import { url } from '../utils/paths';
           <a class="btn btn-outline" href={url('/Senith_CV_2026.pdf')} target="_blank">Download CV</a>
         </div>
       </div>
-      <div class="portrait" aria-label="Senith Jayakody monogram">SJ</div>
+      <div class="portrait" aria-label="Portrait of Senith Jayakody">
+        <span>SJ</span>
+        <img src={url('/profile.jpg')} alt="Senith Jayakody" onerror="this.remove()" />
+      </div>
     </section>
 
     <div class="facts">

@@ -13,7 +13,7 @@ export const CONTACT = {
   ],
   emails: [
     'senithjayakody2000@gmail.com',
-    'e19151@eng.pdn.ac.lk',
+    'senith@eng.pdn.ac.lk',
   ],
 };
 

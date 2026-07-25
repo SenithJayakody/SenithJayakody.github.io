@@ -4,7 +4,7 @@
 export const SITE_TITLE = 'Senith Jayakody';
 export const SITE_DESCRIPTION = 'Researcher in machine learning, signal processing, multispectral imaging, and biomedical sensing.';
 
-export const CV_URL = '/Senith_CV_2026.pdf';
+export const CV_URL = '/resume.pdf';
 
 export const CONTACT = {
   organization: 'Multidisciplinary AI Research Centre (MARC)',

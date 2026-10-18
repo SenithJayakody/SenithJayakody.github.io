@@ -132,6 +132,7 @@
     "description": "Developed an ATmega328P-based wearable cycling safety system programmed in assembly language. Integrated accelerometer-based hand-gesture recognition, nRF24L01 wireless signaling, and GPS/GSM-based collision alerts.",
     "highlights": ["ATmega328P microcontroller programmed in assembly language.", "Accelerometer-based gesture detection for bicycle turn-signal control.", "Wireless glove-to-bicycle communication and GPS/GSM collision-alert functionality."],
     "tags": ["Embedded Systems", "Assembly Language", "ATmega328P", "Accelerometer", "nRF24L01", "GPS", "GSM", "Wireless Communication"],
+    "actions": [{"label": "Code", "url": "https://github.com/SenithJayakody/GloSmart-Cycling-Safety-Glove"}],
     "image": "/images/projects/glosmart.webp",
     "imageAlt": "Conceptual cyclist using a motion-sensing smart glove connected wirelessly to bicycle safety lights"
   },

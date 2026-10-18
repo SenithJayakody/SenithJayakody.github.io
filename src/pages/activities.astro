@@ -3,56 +3,100 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE } from '../consts';
+
+const workshops = [
+  {
+    title: 'Diamond Jubilee AI Workshop',
+    period: '2025',
+    role: 'Workshop Facilitator',
+    description: 'Facilitated sessions and practical demonstrations on artificial intelligence and embedded systems for pre-engineering students.',
+  },
+  {
+    title: 'AI Symposium — Trinity College, Kandy',
+    period: '2025',
+    role: 'Research Demonstrator & Speaker',
+    description: 'Presented real-world applications of artificial intelligence and multispectral imaging, introducing students to practical research and engineering applications.',
+  },
+  {
+    title: 'DreamEx 2025',
+    period: '2025',
+    role: 'Research Demonstrator',
+    venue: 'Hatharaliyadda National School',
+    description: 'Demonstrated artificial intelligence and multispectral imaging technologies to students and visitors at Hatharaliyadda National School.',
+  },
+];
+
+const service = [
+  {
+    title: 'IEEE Robotics and Automation Society Student Chapter',
+    period: '2021–2022',
+    role: 'Logistics Team Member',
+    description: 'Supported the organization of robotics competitions and technical workshops for undergraduate students.',
+  },
+  {
+    title: 'IET on Campus',
+    period: '2022–2023',
+    role: 'Volunteer',
+    description: 'Contributed to technical sessions, student engagement, and outreach activities.',
+  },
+];
 ---
 <!doctype html>
 <html lang="en">
 <head>
-  <BaseHead title={`Activities | ${SITE_TITLE}`} description="Workshops, exhibitions, outreach, and academic service by Senith Jayakody." />
+  <BaseHead title={`Activities & Outreach | ${SITE_TITLE}`} description="Workshops, research demonstrations, and academic service by Senith Jayakody." />
   <style>
-    .hero{padding:3.5rem 0 2.5rem;max-width:760px}.eyebrow{color:var(--color-accent);font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}.hero h1{font-size:clamp(3rem,7vw,5rem);letter-spacing:-.045em;margin:.6rem 0 1rem}.hero p{font-size:1.15rem;line-height:1.75}
-    .activity-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin:1.5rem 0 4rem}.activity{border:1px solid var(--color-border);border-radius:16px;padding:1.5rem;background:var(--color-bg-offset);display:flex;flex-direction:column}.activity .year{font-size:.75rem;font-weight:700;color:var(--color-accent);letter-spacing:.1em;text-transform:uppercase}.activity h3{font-size:1.25rem;margin:.65rem 0}.activity p{font-size:.94rem;margin:0;flex:1}.type{display:inline-block;margin-top:1.2rem;font-size:.75rem;color:var(--color-text-muted);border-top:1px solid var(--color-border);padding-top:.8rem}
-    .service{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:4rem}.service article{padding:1.2rem 0;border-bottom:1px solid var(--color-border)}.service h3{font-size:1.1rem;margin:.25rem 0}.service p{font-size:.9rem;margin:0}
-    @media(max-width:760px){.activity-grid,.service{grid-template-columns:1fr}}
+    .hero{padding:3.5rem 0 2.5rem;max-width:800px}.eyebrow{color:var(--color-accent);font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}.hero h1{font-size:clamp(3rem,7vw,5rem);letter-spacing:-.045em;margin:.6rem 0 1rem}.hero p{font-size:1.15rem;line-height:1.75;max-width:760px}
+    .activity-section{margin-bottom:4rem}.section-heading{font-size:clamp(1.7rem,4vw,2.35rem);margin:0 0 1.4rem}.activity-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.2rem}.activity-grid.service-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.activity{border:1px solid var(--color-border);border-radius:16px;background:var(--color-bg-offset);display:flex;flex-direction:column;overflow:hidden;min-width:0}.activity-image{aspect-ratio:16/9;overflow:hidden}.activity-image img{display:block;height:100%;object-fit:cover;width:100%}.activity-content{display:flex;flex:1;flex-direction:column;padding:1.5rem}.activity .year{font-size:.75rem;font-weight:700;color:var(--color-accent);letter-spacing:.1em;text-transform:uppercase}.activity h3{font-size:1.25rem;line-height:1.35;margin:.65rem 0}.activity p{font-size:.94rem;line-height:1.6;margin:0;flex:1}.activity-meta{border-top:1px solid var(--color-border);display:grid;gap:.35rem;margin-top:1.2rem;padding-top:.85rem}.activity-role{color:var(--color-text-main);font-size:.82rem;font-weight:700}.activity-venue{color:var(--color-text-muted);font-size:.8rem}.activity-link{color:var(--color-accent);font-size:.82rem;font-weight:700;text-decoration:none}.activity-link:hover{text-decoration:underline}
+    @media(max-width:900px){.activity-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:640px){.activity-grid,.activity-grid.service-grid{grid-template-columns:1fr}.hero{padding-top:2.5rem}.activity-content{padding:1.35rem}}
   </style>
 </head>
 <body>
 <Header />
 <main>
   <section class="hero">
-    <span class="eyebrow">Knowledge sharing & outreach</span>
-    <h1>Workshops & exhibitions</h1>
-    <p>Alongside research, I enjoy translating engineering and AI into practical demonstrations and accessible learning experiences for students and wider communities.</p>
+    <span class="eyebrow">Knowledge sharing & academic service</span>
+    <h1>Activities & Outreach</h1>
+    <p>Workshops, research demonstrations, and academic service through which I have shared technical knowledge and engaged with students and wider communities.</p>
   </section>
 
-  <section>
+  <section class="activity-section" aria-labelledby="workshops-heading">
+    <h2 id="workshops-heading" class="section-heading">Workshops & Research Demonstrations</h2>
     <div class="activity-grid">
-      <article class="activity">
-        <span class="year">2025</span>
-        <h3>Diamond Jubilee AI Workshop</h3>
-        <p>Conducted sessions and interactive demonstrations on artificial intelligence applications and embedded systems for pre-engineering students.</p>
-        <span class="type">Workshop · Teaching & demonstrations</span>
-      </article>
-      <article class="activity">
-        <span class="year">2025</span>
-        <h3>AI Symposium, Trinity College Kandy</h3>
-        <p>Participated in panel discussions and student sessions showcasing real-world AI use cases and pathways into engineering research.</p>
-        <span class="type">Symposium · Panel & student engagement</span>
-      </article>
-      <article class="activity">
-        <span class="year">2025</span>
-        <h3>DreamEx 2025</h3>
-        <p>Represented university research at Hatharaliyadda National School and demonstrated multispectral imaging applications in agriculture and healthcare.</p>
-        <span class="type">Educational exhibition · Research demonstration</span>
-      </article>
+      {workshops.map((activity) => (
+        <article class="activity">
+          {activity.image && (
+            <div class="activity-image"><img src={activity.image.src} alt={activity.image.alt} loading="lazy" /></div>
+          )}
+          <div class="activity-content">
+            <span class="year">{activity.period}</span>
+            <h3>{activity.title}</h3>
+            <p>{activity.description}</p>
+            <div class="activity-meta">
+              <span class="activity-role">{activity.role}</span>
+              {activity.venue && <span class="activity-venue">{activity.venue}</span>}
+              {activity.link && <a class="activity-link" href={activity.link} target="_blank" rel="noopener noreferrer">Event link ↗</a>}
+            </div>
+          </div>
+        </article>
+      ))}
     </div>
   </section>
 
-  <section>
-    <span class="eyebrow">Service</span>
-    <h2>Student & professional engagement</h2>
-    <div class="service">
-      <article><span class="year">2021 — 2022</span><h3>IEEE RAS Student Chapter</h3><p>Logistics team member supporting robotics competitions and technical workshops for undergraduates.</p></article>
-      <article><span class="year">2022 — 2023</span><h3>IET on Campus</h3><p>Volunteer supporting university outreach, technical sessions, and student engagement initiatives.</p></article>
+  <section class="activity-section" aria-labelledby="service-heading">
+    <h2 id="service-heading" class="section-heading">Academic Service & Volunteering</h2>
+    <div class="activity-grid service-grid">
+      {service.map((activity) => (
+        <article class="activity">
+          <div class="activity-content">
+            <span class="year">{activity.period}</span>
+            <h3>{activity.title}</h3>
+            <p>{activity.description}</p>
+            <div class="activity-meta"><span class="activity-role">{activity.role}</span></div>
+          </div>
+        </article>
+      ))}
     </div>
   </section>
 </main>

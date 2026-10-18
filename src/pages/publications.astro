@@ -103,6 +103,7 @@ const venueFor = (entry: BibEntry) => {
 };
 
 const noteFor = (entry: BibEntry) => {
+    if (entry.fields.contributionnote) return '';
     const note = entry.fields.note || '';
     const statusPrefix = entry.fields.status ? `${entry.fields.status}. ` : '';
     return statusPrefix && note.startsWith(statusPrefix) ? note.slice(statusPrefix.length) : note;

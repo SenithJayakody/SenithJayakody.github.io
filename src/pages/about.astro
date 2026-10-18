@@ -12,9 +12,9 @@ import { SITE_TITLE } from '../consts';
     .intro{max-width:820px;padding:3rem 0 2rem}.intro h1{font-size:clamp(3rem,7vw,5rem);letter-spacing:-.04em}.lead{font-size:1.2rem;line-height:1.8}
     .layout{display:grid;grid-template-columns:1.6fr .8fr;gap:4rem}.item{padding:1.3rem 0;border-bottom:1px solid var(--color-border)}.item h3{margin:.2rem 0;font-size:1.2rem}.date{font-size:.78rem;color:var(--color-accent);font-weight:700;text-transform:uppercase;letter-spacing:.08em}.item p{margin:.4rem 0;font-size:.95rem}
     .skill-group{margin:1.1rem 0}.skill-group h3{font-size:.9rem;margin:0 0 .55rem}.tags{display:flex;flex-wrap:wrap;gap:.5rem}.tag{border:1px solid var(--color-border);border-radius:999px;padding:.3rem .7rem;font-size:.82rem;color:var(--color-text-muted)}
-    .results{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:1rem}.result-card{border:1px solid var(--color-border);border-radius:12px;padding:1rem}.result-card strong{display:block;color:var(--color-text-main)}.result-card p{margin:.35rem 0;font-size:.9rem}.document-links{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1rem}
+    .qualifications{margin-top:1rem}.qualification{padding:1rem 0}.qualification+.qualification{border-top:1px solid var(--color-border)}.qualification h4{color:var(--color-text-main);font-size:1rem;margin:0 0 .35rem}.qualification p{margin:.25rem 0}.qualification a{display:inline-block;font-size:.88rem;margin-top:.4rem}.achievement{font-weight:700}.document-links{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1rem}
     .degree-field{color:var(--color-text-main);font-size:1.05rem;font-weight:700}.supporting{color:var(--color-text-muted);font-size:.85rem!important}
-    @media(max-width:760px){.intro h1{font-size:clamp(2.25rem,11vw,3rem)}.layout{grid-template-columns:1fr;gap:1rem}.results{grid-template-columns:1fr}}
+    @media(max-width:760px){.intro h1{font-size:clamp(2.25rem,11vw,3rem)}.layout{grid-template-columns:1fr;gap:1rem}}
   </style>
 </head>
 <body>
@@ -46,23 +46,22 @@ import { SITE_TITLE } from '../consts';
         <div class="document-links"><a class="btn btn-outline" href="/documents/Academic-Transcript.pdf" target="_blank">View academic transcript</a></div>
       </article>
       <article class="item">
-        <span class="date">2005 — 2019</span>
+        <span class="date">Secondary Education · 2005–2019</span>
         <h3>Trinity College, Kandy</h3>
-        <p>Primary and secondary education, completing the G.C.E. Ordinary Level and Advanced Level examinations.</p>
-        <div class="results">
-          <div class="result-card">
-            <strong>Sri Lankan G.C.E. Advanced Level — National University Entrance Examination</strong>
-            <p>2019 · Physical Science Stream</p>
-            <p>Combined Mathematics — A · Physics — A · Chemistry — A</p>
-            <p>Z-score: 2.1582 · Top 4% examination standing, as reported by me.</p>
-            <p class="supporting">General English — A · Common General Test — 74</p>
+        <div class="qualifications">
+          <section class="qualification">
+            <h4>G.C.E. Advanced Level — 2019</h4>
+            <p>National University Entrance Examination · Physical Science Stream</p>
+            <p>Combined Mathematics (A) · Physics (A) · Chemistry (A)</p>
+            <p class="achievement">Top 4% nationwide in the Physical Science stream</p>
+            <p class="supporting">Z-score: 2.1582</p>
             <a href="/documents/gce-al-result-sheet.pdf" target="_blank">View result sheet ↗</a>
-          </div>
-          <div class="result-card">
-            <strong>Sri Lankan G.C.E. Ordinary Level — Secondary School Examination</strong>
-            <p>2016 · 9 A grades</p>
+          </section>
+          <section class="qualification">
+            <h4>G.C.E. Ordinary Level — 2016</h4>
+            <p>9 A grades</p>
             <a href="/documents/gce-ol-result-sheet.pdf" target="_blank">View result sheet ↗</a>
-          </div>
+          </section>
         </div>
       </article>
     </div>

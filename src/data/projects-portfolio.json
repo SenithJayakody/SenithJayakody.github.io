@@ -1,0 +1,135 @@
+[
+  {
+    "id": "diffusion-theory",
+    "title": "Theoretical Analysis of Diffusion Models",
+    "period": "2026–Present",
+    "status": "Ongoing Research",
+    "category": "Generative AI / Statistical Learning",
+    "description": "Investigating the statistical properties of denoising diffusion models, particularly the relationship between predicted-noise characteristics and generative fidelity. The research examines covariance structure, trace-energy behavior, and regularization strategies for improving the statistical properties of model predictions.",
+    "highlights": ["Statistical analysis of predicted noise in diffusion models.", "Investigation of covariance structure and trace-energy behavior.", "Exploration of regularization strategies and their relationship to generative fidelity.", "Evaluation through theoretical analysis and numerical experiments."],
+    "tags": ["Diffusion Models", "Generative AI", "Statistical Learning", "Covariance Analysis", "Regularization", "Deep Learning"],
+    "image": "/images/projects/diffusion-theory.webp",
+    "imageAlt": "Conceptual illustration of noise evolving into coherent structure through a diffusion process"
+  },
+  {
+    "id": "inr-colorization",
+    "title": "Image Colorization Using Implicit Neural Representations",
+    "period": "2026–Present",
+    "status": "Ongoing Research",
+    "category": "Computational Imaging / Generative AI",
+    "description": "Investigating image colorization using implicit neural representations, where continuous coordinate-based neural models reconstruct image color information under sparse color guidance. The work studies the role of image structure, color constraints, and guided optimization in recovering plausible color representations.",
+    "highlights": ["Coordinate-based implicit neural representations.", "Image colorization formulated as an inverse problem.", "Sparse color-hint guidance and reconstruction constraints.", "Investigation of spatial structure and color propagation."],
+    "tags": ["Implicit Neural Representations", "Image Colorization", "Inverse Problems", "Computational Imaging", "Deep Learning"],
+    "output": {"label": "Manuscript under review at ICLR 2027", "title": "Colour-INR: Implicit Neural Representation for Image Colorization through Colour Guidance"},
+    "image": "/images/projects/inr-colorization.webp",
+    "imageAlt": "Conceptual grayscale-to-color reconstruction guided by sparse color points and a coordinate grid"
+  },
+  {
+    "id": "preterm-birth-detection",
+    "title": "Preterm Birth Prediction From EHG and Tocographic Signals",
+    "period": "2025–Present",
+    "status": "Ongoing Research",
+    "category": "Biomedical Signal Processing / Machine Learning",
+    "description": "Developing signal-processing and machine-learning methods for preterm birth classification using electrohysterography and tocographic recordings. The research investigates time-frequency representations, empirical mode decomposition, interpretable feature extraction, and robust model evaluation.",
+    "highlights": ["Spectral, statistical, entropy-based, and time-frequency features.", "Empirical mode decomposition and intrinsic mode functions.", "Machine-learning classification with recording-level evaluation.", "Investigation of signal segmentation and preprocessing strategies."],
+    "tags": ["EHG", "Signal Processing", "Empirical Mode Decomposition", "Interpretable ML"],
+    "output": {"label": "Manuscript under review at PLOS ONE", "title": "Empirical Mode Decomposition and Interpretable Machine Learning for Preterm Birth Classification from Electrohysterography"},
+    "actions": [
+      {"label": "Paper", "url": "https://arxiv.org/abs/2608.17643"},
+      {"label": "Code", "url": "https://github.com/SenithJayakody/tpehgt-preterm-emd"},
+      {"label": "Preprint", "url": "https://arxiv.org/abs/2509.07432", "note": "Earlier related preprint"}
+    ],
+    "image": "/images/projects/preterm-birth-ehg.webp",
+    "imageAlt": "Conceptual EHG waveforms, decomposed signal components, and time-frequency patterns"
+  },
+  {
+    "id": "soil-composition-msi",
+    "title": "Soil Composition and Texture Classification Using Multispectral Imaging",
+    "period": "2023–2025",
+    "status": "Completed Research",
+    "category": "Computational Imaging / Applied Machine Learning",
+    "description": "Developed reflectance multispectral imaging and machine-learning methods for estimating soil grain-size composition and classifying USDA soil texture. The work combines a custom multispectral imaging system with image preprocessing, spectral feature analysis, regression, and classification.",
+    "highlights": ["Reflectance multispectral imaging with 13 illumination bands.", "Estimation of clay, silt, and sand proportions.", "USDA texture classification.", "Imaging calibration, preprocessing, and model evaluation."],
+    "tags": ["Multispectral Imaging", "Computational Imaging", "Regression", "Classification"],
+    "output": {"label": "Published in IEEE Access", "title": "Reflectance Multispectral Imaging for Soil Grain-Size Composition Estimation and USDA Texture Classification"},
+    "actions": [
+      {"label": "Paper", "url": "https://doi.org/10.1109/ACCESS.2026.3721276"},
+      {"label": "Code", "url": "https://github.com/sandunikalakmali/soil-texture-msi"}
+    ],
+    "image": "/images/projects/soil-texture-msi.webp",
+    "imageAlt": "Conceptual soil grain textures illuminated by multiple spectral bands for optical sensing"
+  },
+  {
+    "id": "microcystis-toxicity",
+    "title": "Microcystis and Microcystin Estimation Using Multispectral Imaging",
+    "period": "2023–2025",
+    "status": "Completed Research",
+    "category": "Environmental Sensing / Computational Imaging",
+    "description": "Investigated transmission-mode multispectral imaging and machine-learning regression methods for estimating Microcystis cell concentration and ELISA-equivalent microcystin concentration in water samples, with emphasis on non-destructive optical measurements and quantitative analysis.",
+    "highlights": ["Transmission-mode multispectral imaging.", "Spectral feature extraction and regression.", "Microcystis cell-concentration estimation.", "Comparison with reference measurements for microcystin estimation."],
+    "tags": ["Environmental Sensing", "Multispectral Imaging", "Optical Measurement", "Regression"],
+    "output": {"label": "Manuscript in preparation", "title": "Experimental work completed; manuscript preparation continues"},
+    "image": "/images/projects/microcystis-msi.webp",
+    "imageAlt": "Conceptual cyanobacteria in a water sample under transmission-mode multispectral illumination"
+  },
+  {
+    "id": "audio-diffusion",
+    "title": "Feature-Conditioned Diffusion for Audio Generation",
+    "period": "2025",
+    "status": "Completed Research",
+    "category": "Generative AI / Audio Signal Processing",
+    "description": "Investigated feature-conditioned diffusion models for audio generation, extending diffusion-based audio synthesis through signal-processing representations and evaluating the influence of additional conditioning information on generated audio.",
+    "highlights": ["Diffusion-based audio generation.", "Feature-conditioned generative modeling.", "Signal-processing representations.", "Evaluation of generative audio models."],
+    "tags": ["Diffusion Models", "Audio Generation", "Signal Processing", "Generative AI"],
+    "output": {"label": "Peer-reviewed conference publication", "title": "Feature Conditioned Diffusion for Audio Generation · IEEE ICIIS 2025"},
+    "actions": [
+      {"label": "Paper", "url": "https://doi.org/10.1109/ICIIS69028.2026.11450741"},
+      {"label": "Code", "url": "https://github.com/sandunikalakmali/conditional-audiogen"}
+    ],
+    "image": "/images/projects/audio-diffusion.webp",
+    "imageAlt": "Conceptual audio waveform emerging from noise through feature-conditioned diffusion layers"
+  },
+  {
+    "id": "soil-spectral-dynamics",
+    "title": "Soil Classification Through Moisture-Induced Spectral Dynamics",
+    "period": "2025",
+    "status": "Completed Research",
+    "category": "Multispectral Imaging / Machine Learning",
+    "description": "Investigated multispectral imaging and machine-learning approaches for soil classification through moisture-induced changes in spectral responses.",
+    "highlights": ["Moisture-induced changes in soil spectral response.", "Multispectral image acquisition and analysis.", "Learning-based soil classification."],
+    "tags": ["Multispectral Imaging", "Soil Classification", "Spectral Dynamics", "Machine Learning"],
+    "output": {"label": "Peer-reviewed conference publication", "title": "Multispectral Imaging and Machine Learning for Soil Classification through Moisture-Induced Spectral Dynamics · IEEE ICIIS 2025"},
+    "actions": [{"label": "Paper", "url": "https://doi.org/10.1109/ICIIS69028.2026.11450634"}],
+    "image": "/images/projects/soil-spectral-dynamics.webp",
+    "imageAlt": "Conceptual dry-to-wet soil states showing changing reflected spectral patterns"
+  },
+  {
+    "id": "soil-moisture-msi",
+    "title": "Soil Moisture Estimation Using Multispectral Imaging",
+    "period": "2023–2024",
+    "status": "Completed Research",
+    "category": "Multispectral Imaging / Deep Learning",
+    "description": "Developed reflectance multispectral imaging and deep-learning methods for non-destructive soil-moisture estimation, combining spectral image acquisition with learning-based regression.",
+    "highlights": ["Reflectance multispectral image acquisition.", "Non-destructive moisture estimation.", "Deep-learning regression from spectral data."],
+    "tags": ["Multispectral Imaging", "Soil Moisture", "Deep Learning", "Regression"],
+    "output": {"label": "Peer-reviewed conference publication", "title": "Deep Learning for Soil Moisture Content Estimation via Reflectance Multispectral Imaging · ICATC 2024"},
+    "actions": [
+      {"label": "Paper", "url": "https://doi.org/10.1109/ICATC64549.2024.11025290"},
+      {"label": "Code", "url": "https://github.com/SenithJayakody/soil-moisture-msi"}
+    ],
+    "image": "/images/projects/soil-moisture-msi.webp",
+    "imageAlt": "Conceptual soil sample with a moisture gradient under reflectance multispectral sensing"
+  },
+  {
+    "id": "blood-glucose-sensor",
+    "title": "Non-Invasive Blood Glucose Sensor",
+    "period": "2023",
+    "status": "Completed Prototype",
+    "category": "Optical Sensing / Embedded Systems",
+    "description": "Developed a wearable prototype combining optical sensing and signal-processing techniques to explore non-invasive blood-glucose estimation without skin penetration.",
+    "highlights": ["Optical sensing through a wearable prototype.", "Embedded acquisition and signal processing.", "Exploratory non-invasive measurement workflow."],
+    "tags": ["Optical Sensing", "Embedded Systems", "Signal Processing", "Wearable Prototype"],
+    "image": "/images/projects/blood-glucose-sensor.webp",
+    "imageAlt": "Conceptual wearable optical sensor and signal-processing waveform"
+  }
+]

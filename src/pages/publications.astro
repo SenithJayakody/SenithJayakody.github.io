@@ -76,6 +76,17 @@ const sections = [
 
 const formatAuthor = (author: Author) => author.first ? `${author.first} ${author.last}` : author.last;
 const clean = (value = '') => value.replace(/[{}]/g, '');
+const normalizeName = (value = '') => value.toLowerCase().replace(/[^a-z0-9]/g, '');
+const isCurrentAuthor = (author: Author) => {
+    if (normalizeName(author.last) !== 'jayakody') return false;
+    return ['senith', 's', 'jast'].includes(normalizeName(author.first));
+};
+const equalContributionIndexes = (entry: BibEntry) => new Set(
+    (entry.fields.equalcontribution || '')
+        .split(',')
+        .map((value) => parseInt(value.trim()))
+        .filter((value) => Number.isInteger(value))
+);
 
 const bibFieldOrder = ['title', 'author', 'journal', 'booktitle', 'pages', 'year', 'doi', 'eprint', 'archiveprefix', 'primaryclass', 'note'];
 const createBibTeX = (entry: BibEntry) => {
@@ -110,6 +121,9 @@ const noteFor = (entry: BibEntry) => {
 			.pub-links a, .pub-links summary { font-weight: 600; }
 			.pub-links a { display: inline-flex; align-items: center; }
 			.pub-note { margin: .45rem 0 0; font-size: .86rem; color: var(--color-text-muted); }
+			.self-author { font-weight: 700; text-decoration: underline; text-underline-offset: .16em; text-decoration-thickness: .08em; }
+			.equal-contribution-marker { margin-left: .08em; font-size: .72em; line-height: 0; }
+			.contribution-note { margin: .35rem 0 0; font-size: .82rem; color: var(--color-text-muted); }
 			.bibtex-details { position: relative; }
 			.bibtex-details summary { cursor: pointer; color: var(--color-accent); list-style: none; }
 			.bibtex-details summary::-webkit-details-marker { display: none; }
@@ -135,17 +149,27 @@ const noteFor = (entry: BibEntry) => {
 					<div class="publication-list">
 						{section.entries.map((entry) => {
 							const bibtex = createBibTeX(entry);
+							const equalContributors = equalContributionIndexes(entry);
 							return (
 								<article class="publication-item">
 									<span class="pub-title">{clean(entry.fields.title)}</span>
 									<div class="pub-authors">
-										{entry.authors.map((author, index) => (
-											<>
-												<AuthorLink nameOrSlug={formatAuthor(author)} />
-												{index < entry.authors.length - 1 ? ', ' : ''}
-											</>
-										))}
+										{entry.authors.map((author, index) => {
+											const displayName = formatAuthor(author);
+											return (
+												<>
+													{isCurrentAuthor(author) ? (
+														<span class="self-author">{displayName}</span>
+													) : (
+														<AuthorLink nameOrSlug={displayName} />
+													)}
+													{equalContributors.has(index) && <sup class="equal-contribution-marker" aria-label="equal contribution">†</sup>}
+													{index < entry.authors.length - 1 ? ', ' : ''}
+												</>
+											);
+										})}
 									</div>
+									{entry.fields.contributionnote && <p class="contribution-note">† {entry.fields.contributionnote}.</p>}
 									<div class="pub-venue">
 										{venueFor(entry)}
 										{entry.fields.pages && <span>, pp. {entry.fields.pages.replace('--', '–')}</span>}

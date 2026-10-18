@@ -1,148 +1,20 @@
 {
   "events": [
-    {
-      "id": "pre-engineering-2026",
-      "yearGroup": "2026",
-      "date": "20 April 2026",
-      "title": "AI Workshop for Pre-Engineering Students",
-      "venue": "Faculty of Engineering, University of Peradeniya",
-      "type": "Workshop",
-      "organizer": "MARC, University of Peradeniya",
-      "description": "Participated in an AI workshop for prospective engineering students, introducing foundational concepts and practical applications of artificial intelligence.",
-      "image": "/images/activities/pre-engineering-2026.webp",
-      "imageAlt": "AI workshop for prospective engineering students at the University of Peradeniya",
-      "link": "https://www.linkedin.com/posts/multidisciplinaryai_artificialintelligence-marc-universityofperadeniya-activity-7450808948225445889-mTEP"
-    },
-    {
-      "id": "bandarawela-2026",
-      "yearGroup": "2026",
-      "date": "4 March 2026",
-      "title": "MARC AI Outreach — Bandarawela",
-      "venue": "Bandarawela Central College",
-      "type": "Educational Outreach",
-      "role": "MARC Outreach Team Member",
-      "description": "Participated in a MARC outreach programme introducing school students to artificial intelligence, emerging technologies, and their applications across different disciplines.",
-      "image": "/images/activities/bandarawela-2026.webp",
-      "imageAlt": "MARC artificial intelligence outreach programme at Bandarawela Central College",
-      "link": "https://www.linkedin.com/posts/multidisciplinaryai_marc-ai4all-artificialintelligence-activity-7446090252974477312-d0H0"
-    },
-    {
-      "id": "hatton-2026",
-      "yearGroup": "2026",
-      "date": "3 March 2026",
-      "title": "MARC AI Outreach — Hatton",
-      "venue": "Highlands College, Hatton",
-      "type": "Educational Outreach",
-      "role": "MARC Outreach Team Member",
-      "description": "Contributed to a MARC outreach programme introducing artificial intelligence and emerging technologies to Advanced Level students from schools in the Hatton region.",
-      "image": "/images/activities/hatton-2026.webp",
-      "imageAlt": "MARC artificial intelligence outreach programme for students in Hatton",
-      "link": "https://www.linkedin.com/posts/multidisciplinaryai_marc-outreach-programme-at-hatton-the-multi-activity-7447987434606231552-SQSA"
-    },
-    {
-      "id": "vavuniya-2025",
-      "yearGroup": "2025",
-      "date": "2 September 2025",
-      "title": "Meet AI: Tools for Exploratory Learning",
-      "venue": "University of Vavuniya",
-      "type": "Workshop / Educational Outreach",
-      "description": "Participated in MARC educational outreach activities for Advanced Level and undergraduate student groups, introducing artificial intelligence, project-based learning, and exploratory research.",
-      "image": "/images/activities/vavuniya-2025.webp",
-      "imageAlt": "MARC educational outreach activities at the University of Vavuniya",
-      "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7375082921369571328/"
-    },
-    {
-      "id": "aifs-session",
-      "yearGroup": "2025",
-      "date": "25 August 2025",
-      "title": "Artificial Intelligence Forum for Students (AIFS) — AI Session",
-      "venue": "University of Peradeniya, Sri Lanka",
-      "type": "Academic Workshop / AI Outreach",
-      "role": "MARC Team Member",
-      "description": "Participated in an artificial intelligence session jointly organized by the Artificial Intelligence Forum for Students (AIFS), the Physical Society of the University of Peradeniya, and the Multidisciplinary AI Research Centre (MARC).",
-      "image": "/images/activities/aifs-session.webp",
-      "imageAlt": "Artificial intelligence session organized by AIFS, the Physical Society, and MARC at the University of Peradeniya",
-      "link": "https://www.facebook.com/share/p/19B3KiLkcB/?mibextid=wwXIfr"
-    },
-    {
-      "id": "diamond-jubilee-2025",
-      "yearGroup": "2025",
-      "date": "2025",
-      "title": "Diamond Jubilee AI Workshop",
-      "venue": "Faculty of Engineering, University of Peradeniya",
-      "type": "Workshop",
-      "role": "Workshop Facilitator",
-      "description": "Supported interactive sessions and demonstrations on artificial intelligence and embedded systems for prospective engineering students as part of the Faculty of Engineering's Diamond Jubilee celebrations.",
-      "image": "/images/activities/diamond-jubilee-2025.webp",
-      "imageAlt": "Diamond Jubilee artificial intelligence workshop at the University of Peradeniya",
-      "link": "https://www.linkedin.com/posts/multidisciplinaryai_what-a-day-to-remember-as-the-multidisciplinary-activity-7332038054116818944-uyua"
-    },
-    {
-      "id": "trinity-ai-2025",
-      "yearGroup": "2025",
-      "date": "17 May 2025",
-      "title": "AI for All: Transforming the Future Across Fields",
-      "venue": "Trinity College, Kandy",
-      "type": "Symposium / Educational Outreach",
-      "role": "Research Demonstrator / Speaker",
-      "description": "Participated in an educational programme introducing students to artificial intelligence and its applications across science, engineering, and other disciplines.",
-      "image": "/images/activities/trinity-ai-2025.webp",
-      "imageAlt": "Artificial intelligence educational programme at Trinity College, Kandy",
-      "link": "https://www.linkedin.com/posts/dilshara-herath_aiforall-artificialintelligence-trinitycollegekandy-activity-7330643102908461056-rcrM"
-    },
-    {
-      "id": "sahasak-nimavum-2025",
-      "yearGroup": "2025",
-      "date": "25–27 April 2025",
-      "title": "Sahasak Nimavum — International Inventions and Innovations Exhibition",
-      "venue": "BMICH, Colombo",
-      "type": "Research Exhibition",
-      "description": "Represented MARC in presenting research and engineering innovations, including our multispectral imaging system, at the Sahasak Nimavum inventions and innovations exhibition.",
-      "secondary": "Silver Award — Engineering Category",
-      "image": "/images/activities/sahasak-nimavum-2025.webp",
-      "imageAlt": "MARC research exhibit at the Sahasak Nimavum inventions and innovations exhibition",
-      "link": "https://slic.gov.lk/sn2024/",
-      "linkLabel": "Official event"
-    },
-    {
-      "id": "mayanz-expo-2025",
-      "yearGroup": "2025",
-      "date": "7–9 February 2025",
-      "title": "Mayanz Expo 2025",
-      "venue": "Mahamaya Girls' College, Kandy",
-      "type": "Research Exhibition",
-      "role": "Research Demonstrator / MARC Representative",
-      "description": "Represented the Multidisciplinary AI Research Centre (MARC) at Mayanz Expo 2025, demonstrating research projects and introducing visitors to practical applications of artificial intelligence and engineering.",
-      "image": "/images/activities/mayanz-expo-2025.webp",
-      "imageAlt": "MARC research demonstration at Mayanz Expo 2025",
-      "link": "https://www.facebook.com/mayanzexpo/",
-      "linkLabel": "Organizer page"
-    },
-    {
-      "id": "dreamex-2025",
-      "yearGroup": "2025",
-      "date": "2025",
-      "title": "DreamEx 2025",
-      "venue": "Hatharaliyadda National School",
-      "type": "Educational Exhibition",
-      "role": "Research Demonstrator / Volunteer",
-      "description": "Participated in interactive AI demonstrations and student-engagement activities, introducing visitors to research projects and practical applications of artificial intelligence.",
-      "image": "/images/activities/dreamex-2025.webp",
-      "imageAlt": "Interactive artificial intelligence demonstrations at DreamEx 2025"
-    }
+    {"id":"pre-engineering-2026","yearGroup":"2026","date":"20 April 2026","title":"AI Workshop for Pre-Engineering Students","venue":"University of Peradeniya","type":"Workshop","role":"Workshop Participant / MARC Team Member","description":"Participated in a workshop on artificial intelligence for pre-engineering students, contributing to sessions that introduced AI concepts and practical applications.","image":"/images/activities/pre-engineering-2026.webp","imageAlt":"AI workshop for pre-engineering students at the University of Peradeniya","link":"https://lnkd.in/p/g-4e-uKg"},
+    {"id":"bandarawela-2026","yearGroup":"2026","date":"4 March 2026","title":"MARC AI Outreach — Bandarawela","venue":"Bandarawela Central College","type":"Educational Outreach","role":"MARC Outreach Team Member","description":"Participated in a MARC outreach programme introducing school students to artificial intelligence and emerging technologies.","image":"/images/activities/bandarawela-2026.webp","imageAlt":"MARC AI outreach participants at Bandarawela Central College","link":"https://lnkd.in/p/geBtZs6S"},
+    {"id":"hatton-2026","yearGroup":"2026","date":"3 March 2026","title":"MARC AI Outreach — Hatton","venue":"Highlands College, Hatton","type":"Educational Outreach","role":"MARC Outreach Team Member","description":"Contributed to a MARC outreach programme introducing artificial intelligence and emerging technologies to school students in the Hatton region.","image":"/images/activities/hatton-2026.webp","imageAlt":"MARC AI outreach participants with school students in Hatton","link":"https://lnkd.in/p/gTFyBzXV"},
+    {"id":"engex-2025","yearGroup":"2025","date":"23–27 September 2025","title":"EngEx 2025","venue":"Faculty of Engineering, University of Peradeniya","type":"Engineering Exhibition","role":"Research Demonstrator","description":"Participated in EngEx 2025, demonstrating research work and interacting with visitors at the engineering exhibition.","image":"/images/activities/engex-2025.webp","imageAlt":"Research demonstration at the EngEx 2025 engineering exhibition","link":"https://www.facebook.com/share/p/19o7EuQ9aS/"},
+    {"id":"maliyadeva-2025","yearGroup":"2025","date":"3 September 2025","title":"AI Session at Maliyadeva Balika School","venue":"Maliyadeva Balika School, Kurunegala","type":"Educational Outreach","role":"MARC Team Member","description":"Participated in an AI outreach session for school students, introducing practical applications of artificial intelligence and emerging technologies.","image":"/images/activities/maliyadeva-2025.webp","imageAlt":"Illustration of an artificial intelligence outreach session for school students"},
+    {"id":"vavuniya-2025","yearGroup":"2025","date":"2 September 2025","title":"Meet AI: Tools for Exploratory Learning","venue":"University of Vavuniya","type":"Workshop / Educational Outreach","role":"MARC Team Member","description":"Participated in an educational outreach session introducing artificial intelligence, exploratory learning, and research-oriented thinking to students.","image":"/images/activities/vavuniya-2025.webp","imageAlt":"Meet AI educational outreach session at the University of Vavuniya","link":"https://www.linkedin.com/feed/update/urn:li:activity:7369700539112095747"},
+    {"id":"aifs-popular-ai-2025","yearGroup":"2025","date":"27 August 2025","title":"The Artificial Intelligence Forum for Students (AIFS) — POPular_AI Session","venue":"University of Peradeniya","type":"Academic Session","role":"MARC Team Member","description":"Participated in an AI session jointly organized by the Artificial Intelligence Forum for Students (AIFS), the Physical Society of the University of Peradeniya, and MARC.","image":"/images/activities/aifs-popular-ai-2025.webp","imageAlt":"Illustration of a university artificial intelligence academic session","link":"https://www.facebook.com/share/p/16NTHTB5L6u/"},
+    {"id":"diamond-jubilee-2025","yearGroup":"2025","date":"21 May 2025","title":"Diamond Jubilee AI Workshop","venue":"Faculty of Engineering, University of Peradeniya","type":"Workshop","role":"Workshop Facilitator / MARC Team Member","description":"Supported sessions and demonstrations on artificial intelligence and related technologies as part of the Faculty of Engineering’s Diamond Jubilee AI workshop.","image":"/images/activities/diamond-jubilee-2025.webp","imageAlt":"Diamond Jubilee artificial intelligence workshop at the Faculty of Engineering","link":"https://www.facebook.com/share/p/1F25rRVSnT/"},
+    {"id":"trinity-ai-2025","yearGroup":"2025","date":"17 May 2025","time":"9.00 AM – 4.00 PM","title":"AI for All: Transforming the Future Across Fields","venue":"Trinity College Main Hall","type":"Symposium / Educational Outreach","role":"Research Demonstrator / Speaker","description":"Participated in an educational event introducing students to artificial intelligence and its applications across multiple fields.","image":"/images/activities/trinity-ai-2025.webp","imageAlt":"AI for All educational event at Trinity College Main Hall","link":"https://www.facebook.com/share/p/18fp8Vhr1q/"},
+    {"id":"sahasak-nimavum-2025","yearGroup":"2025","date":"25–27 April 2025","title":"Sahasak Nimavum 2025","venue":"BMICH, Colombo","type":"Research Exhibition","role":"Research Demonstrator / MARC Representative","description":"Represented MARC at the Sahasak Nimavum National Invention Exhibition, presenting innovative research projects including our multispectral imaging work.","secondary":"Silver Award — Engineering Category","image":"/images/activities/sahasak-nimavum-2025.webp","imageAlt":"MARC research exhibit at the Sahasak Nimavum 2025 exhibition","link":"https://www.facebook.com/share/p/1LHtMDiwTg/"},
+    {"id":"dreamex-2025","yearGroup":"2025","date":"9 April 2025","title":"DreamEx 2025 Educational Exhibition","venue":"Hatharaliyadda National School","type":"Educational Exhibition","role":"Research Demonstrator","description":"Participated in interactive AI demonstrations and student-engagement activities at DreamEx 2025.","image":"/images/activities/dreamex-2025.webp","imageAlt":"Educational exhibition image supplied for the DreamEx 2025 activity","link":"https://www.facebook.com/share/v/1J9GZKi8zz/"},
+    {"id":"mayanz-expo-2025","yearGroup":"2025","date":"7–9 February 2025","title":"Mayanz Expo 2025","venue":"Mahamaya Girls' College, Kandy","type":"Research Exhibition","role":"MARC Representative / Research Demonstrator","description":"Represented MARC at Mayanz Expo 2025, demonstrating research projects and introducing visitors to practical applications of artificial intelligence and engineering.","image":"/images/activities/mayanz-expo-2025.webp","imageAlt":"MARC research demonstration at Mayanz Expo 2025","link":"https://www.facebook.com/share/p/19ofXSM2Ua/"}
   ],
   "service": [
-    {
-      "title": "IEEE Robotics and Automation Society Student Chapter",
-      "period": "2021–2022",
-      "role": "Logistics Team Member",
-      "description": "Supported the organization of robotics competitions and technical workshops for undergraduate students."
-    },
-    {
-      "title": "IET on Campus",
-      "period": "2022–2023",
-      "role": "Volunteer",
-      "description": "Contributed to technical sessions, student engagement, and outreach activities."
-    }
+    {"title":"IEEE Robotics and Automation Society Student Chapter","period":"2021–2022","role":"Logistics Team Member","description":"Supported the organization of robotics competitions and technical workshops for undergraduate students."},
+    {"title":"IET on Campus","period":"2022–2023","role":"Volunteer","description":"Contributed to technical sessions, student engagement, and outreach activities."}
   ]
 }

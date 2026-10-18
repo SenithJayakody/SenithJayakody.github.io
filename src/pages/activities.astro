@@ -5,7 +5,7 @@ import Footer from '../components/Footer.astro';
 import { SITE_TITLE } from '../consts';
 import activitiesData from '../data/activities.json';
 
-const eventGroups = ['2026', '2025', 'Date to be confirmed'].map((label) => ({
+const eventGroups = ['2026', '2025'].map((label) => ({
   label,
   events: activitiesData.events.filter((event) => event.yearGroup === label),
 })).filter((group) => group.events.length > 0);
@@ -18,6 +18,7 @@ const service = activitiesData.service;
   <style>
     .hero{padding:3.5rem 0 2.5rem;max-width:800px}.eyebrow{color:var(--color-accent);font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}.hero h1{font-size:clamp(3rem,7vw,5rem);letter-spacing:-.045em;margin:.6rem 0 1rem}.hero p{font-size:1.15rem;line-height:1.75;max-width:760px}
     .activity-section{margin-bottom:4rem}.section-heading{font-size:clamp(1.7rem,4vw,2.35rem);margin:0 0 1.4rem}.year-heading{color:var(--color-accent);font-size:.82rem;letter-spacing:.14em;margin:2.25rem 0 1rem;text-transform:uppercase}.activity-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.35rem}.activity-grid.service-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.activity{border:1px solid var(--color-border);border-radius:16px;background:var(--color-bg-offset);display:flex;flex-direction:column;overflow:hidden;min-width:0}.activity-image{aspect-ratio:16/9;background:linear-gradient(135deg,color-mix(in srgb,var(--color-accent) 12%,var(--color-bg-offset)),var(--color-bg-offset));overflow:hidden;position:relative}.activity-image img{display:block;height:100%;object-fit:cover;width:100%}.activity-image.is-placeholder::after{border:1px solid color-mix(in srgb,var(--color-accent) 28%,transparent);border-radius:50%;content:'';height:3.25rem;left:50%;position:absolute;top:50%;transform:translate(-50%,-50%);width:3.25rem}.activity-image.is-placeholder::before{background:var(--color-accent);border-radius:50%;content:'';height:.55rem;left:50%;opacity:.55;position:absolute;top:50%;transform:translate(-50%,-50%);width:.55rem}.activity-image.is-placeholder img{opacity:.001}.activity-content{display:flex;flex:1;flex-direction:column;padding:1.5rem}.activity .year{font-size:.75rem;font-weight:700;color:var(--color-accent);letter-spacing:.1em;text-transform:uppercase}.activity h3{font-size:1.25rem;line-height:1.35;margin:.65rem 0}.activity p{font-size:.94rem;line-height:1.6;margin:0;flex:1}.activity-meta{border-top:1px solid var(--color-border);display:grid;gap:.35rem;margin-top:1.2rem;padding-top:.85rem}.activity-type,.activity-role{color:var(--color-text-main);font-size:.82rem;font-weight:700}.activity-venue,.activity-organizer,.activity-secondary{color:var(--color-text-muted);font-size:.8rem}.activity-secondary{font-weight:700}.activity-link{color:var(--color-accent);font-size:.82rem;font-weight:700;text-decoration:none}.activity-link:hover{text-decoration:underline}
+    .activity-time{color:var(--color-text-muted);font-size:.8rem}
     @media(max-width:640px){.activity-grid,.activity-grid.service-grid{grid-template-columns:1fr}.hero{padding-top:2.5rem}.activity-content{padding:1.35rem}}
   </style>
 </head>
@@ -27,7 +28,7 @@ const service = activitiesData.service;
   <section class="hero">
     <span class="eyebrow">Knowledge sharing & academic service</span>
     <h1>Sharing Research Beyond the Lab</h1>
-    <p>Workshops, research demonstrations, and educational outreach activities focused on making artificial intelligence and engineering more accessible to students and wider communities.</p>
+    <p>Workshops, research demonstrations, exhibitions, and educational outreach activities through which I have shared technical knowledge and engaged with students and wider communities.</p>
   </section>
 
   <section class="activity-section" aria-labelledby="outreach-heading">
@@ -49,6 +50,7 @@ const service = activitiesData.service;
                 <div class="activity-meta">
                   <span class="activity-type">{activity.type}</span>
                   {activity.role && <span class="activity-role">{activity.role}</span>}
+                  {activity.time && <span class="activity-time">{activity.time}</span>}
                   <span class="activity-venue">{activity.venue}</span>
                   {activity.organizer && <span class="activity-organizer">Organized by {activity.organizer}</span>}
                   {activity.secondary && <span class="activity-secondary">{activity.secondary}</span>}

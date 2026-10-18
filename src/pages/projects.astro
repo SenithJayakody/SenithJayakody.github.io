@@ -140,8 +140,13 @@ const projects = projectsData;
 			.project-highlights li + li { margin-top: 0.35rem; }
 			.project-output {
 				border-left: 3px solid var(--color-accent);
-				margin: auto 0 1.25rem;
+				margin: 0;
 				padding: 0.15rem 0 0.15rem 0.85rem;
+			}
+			.project-outputs {
+				display: grid;
+				gap: 0.85rem;
+				margin: auto 0 1.25rem;
 			}
 			.output-label {
 				color: var(--color-accent);
@@ -271,10 +276,14 @@ const projects = projectsData;
 								{project.tags.map((tag) => <span class="project-tag">{tag}</span>)}
 							</div>
 
-							{project.output && (
-								<div class="project-output">
-									<span class="output-label">{project.output.label}</span>
-									<div class="output-title">{project.output.title}</div>
+							{(project.outputs ?? (project.output ? [project.output] : [])).length > 0 && (
+								<div class="project-outputs">
+									{(project.outputs ?? (project.output ? [project.output] : [])).map((output) => (
+										<div class="project-output">
+											<span class="output-label">{output.label}</span>
+											<div class="output-title">{output.title}</div>
+										</div>
+									))}
 								</div>
 							)}
 

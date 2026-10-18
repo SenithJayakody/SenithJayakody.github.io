@@ -45,7 +45,7 @@
   {
     "id": "soil-composition-msi",
     "title": "Soil Composition and Texture Classification Using Multispectral Imaging",
-    "period": "2023–2025",
+    "period": "2024–2025",
     "status": "Completed Research",
     "category": "Computational Imaging / Applied Machine Learning",
     "description": "Developed reflectance multispectral imaging and machine-learning methods for estimating soil grain-size composition and classifying USDA soil texture. The work combines a custom multispectral imaging system with image preprocessing, spectral feature analysis, regression, and classification.",
@@ -62,7 +62,7 @@
   {
     "id": "microcystis-toxicity",
     "title": "Microcystis and Microcystin Estimation Using Multispectral Imaging",
-    "period": "2023–2025",
+    "period": "2024–2025",
     "status": "Completed Research",
     "category": "Environmental Sensing / Computational Imaging",
     "description": "Investigated transmission-mode multispectral imaging and machine-learning regression methods for estimating Microcystis cell concentration and ELISA-equivalent microcystin concentration in water samples, with emphasis on non-destructive optical measurements and quantitative analysis.",
@@ -90,35 +90,50 @@
     "imageAlt": "Conceptual audio waveform emerging from noise through feature-conditioned diffusion layers"
   },
   {
-    "id": "soil-spectral-dynamics",
-    "title": "Soil Classification Through Moisture-Induced Spectral Dynamics",
-    "period": "2025",
+    "id": "soil-moisture-msi",
+    "title": "Soil Moisture Estimation and Classification Using Multispectral Imaging",
+    "period": "2023–2025",
     "status": "Completed Research",
     "category": "Multispectral Imaging / Machine Learning",
-    "description": "Investigated multispectral imaging and machine-learning approaches for soil classification through moisture-induced changes in spectral responses.",
-    "highlights": ["Moisture-induced changes in soil spectral response.", "Multispectral image acquisition and analysis.", "Learning-based soil classification."],
-    "tags": ["Multispectral Imaging", "Soil Classification", "Spectral Dynamics", "Machine Learning"],
-    "output": {"label": "Peer-reviewed conference publication", "title": "Multispectral Imaging and Machine Learning for Soil Classification through Moisture-Induced Spectral Dynamics · IEEE ICIIS 2025"},
-    "actions": [{"label": "Paper", "url": "https://doi.org/10.1109/ICIIS69028.2026.11450634"}],
-    "image": "/images/projects/soil-spectral-dynamics.webp",
-    "imageAlt": "Conceptual dry-to-wet soil states showing changing reflected spectral patterns"
-  },
-  {
-    "id": "soil-moisture-msi",
-    "title": "Soil Moisture Estimation Using Multispectral Imaging",
-    "period": "2023–2024",
-    "status": "Completed Research",
-    "category": "Multispectral Imaging / Deep Learning",
-    "description": "Developed reflectance multispectral imaging and deep-learning methods for non-destructive soil-moisture estimation, combining spectral image acquisition with learning-based regression.",
-    "highlights": ["Reflectance multispectral image acquisition.", "Non-destructive moisture estimation.", "Deep-learning regression from spectral data."],
-    "tags": ["Multispectral Imaging", "Soil Moisture", "Deep Learning", "Regression"],
-    "output": {"label": "Peer-reviewed conference publication", "title": "Deep Learning for Soil Moisture Content Estimation via Reflectance Multispectral Imaging · ICATC 2024"},
+    "description": "Investigated reflectance multispectral imaging and machine-learning methods for soil-moisture estimation and classification through moisture-induced spectral variations. The research combines spectral image acquisition, learning-based regression, and classification to study the relationship between soil moisture and optical response.",
+    "highlights": ["Reflectance multispectral image acquisition and preprocessing.", "Deep-learning-based soil-moisture estimation.", "Analysis of moisture-induced changes in spectral responses.", "Learning-based soil classification."],
+    "tags": ["Multispectral Imaging", "Soil Moisture", "Spectral Analysis", "Deep Learning", "Regression", "Classification"],
+    "outputs": [
+      {"label": "IEEE ICIIS 2025", "title": "Multispectral Imaging and Machine Learning for Soil Classification through Moisture-Induced Spectral Dynamics"},
+      {"label": "IEEE ICATC 2024", "title": "Deep Learning for Soil Moisture Content Estimation via Reflectance Multispectral Imaging"}
+    ],
     "actions": [
-      {"label": "Paper", "url": "https://doi.org/10.1109/ICATC64549.2024.11025290"},
+      {"label": "ICIIS 2025 Paper", "url": "https://doi.org/10.1109/ICIIS69028.2026.11450634"},
+      {"label": "ICATC 2024 Paper", "url": "https://doi.org/10.1109/ICATC64549.2024.11025290"},
       {"label": "Code", "url": "https://github.com/SenithJayakody/soil-moisture-msi"}
     ],
     "image": "/images/projects/soil-moisture-msi.webp",
     "imageAlt": "Conceptual soil sample with a moisture gradient under reflectance multispectral sensing"
+  },
+  {
+    "id": "survey-buddy",
+    "title": "Survey Buddy",
+    "period": "2024–Present",
+    "status": "In Development",
+    "category": "Embedded Systems / Applied Computing",
+    "description": "An ongoing terrain-surveying project for collecting GPS coordinates and sensor data, logging field measurements to an SD card, and supporting real-time or offline map visualization through companion software. The public repository currently documents the system rather than providing its implementation source.",
+    "highlights": ["GPS-coordinate and sensor-data acquisition.", "SD-card logging for offline mapping workflows.", "nRF24L01-based transfer of real-time coordinates.", "Companion software for real-time and imported-data map visualization."],
+    "tags": ["GPS", "Embedded Systems", "Data Logging", "nRF24L01", "Wireless Communication", "Mapping"],
+    "actions": [{"label": "Code", "url": "https://github.com/sandunikalakmali/SurveyBuddy"}],
+    "image": "/images/projects/survey-buddy.webp",
+    "imageAlt": "Conceptual terrain-surveying instrument transmitting GPS and sensor data to mapping software"
+  },
+  {
+    "id": "glosmart",
+    "title": "GloSmart — Smart Cycling Safety Glove",
+    "period": "Undergraduate Project",
+    "status": "Completed Undergraduate Project",
+    "category": "Embedded Systems / IoT / Wearable Technology",
+    "description": "GloSmart is a wearable smart-glove project designed to improve cyclist safety through motion sensing and wireless communication. The system integrates turn-signal control, deceleration-based brake-light activation, and collision-alert functionality using embedded sensors and communication modules.",
+    "highlights": ["ADXL345 accelerometer for measuring hand orientation and deceleration.", "Accelerometer calibration and roll-angle estimation for turn-signal control.", "Deceleration-based brake-light activation.", "nRF24L01 wireless communication between the glove and bicycle lighting system.", "GPS-based location acquisition and GSM-based SMS alerts for collision-detection events.", "Battery-powered embedded-system design with attention to power management and system reliability."],
+    "tags": ["Embedded Systems", "IoT", "Wearable Technology", "ADXL345", "GPS", "GSM", "nRF24L01", "Wireless Communication"],
+    "image": "/images/projects/glosmart.webp",
+    "imageAlt": "Conceptual cyclist using a motion-sensing smart glove connected wirelessly to bicycle safety lights"
   },
   {
     "id": "blood-glucose-sensor",
@@ -129,6 +144,7 @@
     "description": "Developed a wearable prototype combining optical sensing and signal-processing techniques to explore non-invasive blood-glucose estimation without skin penetration.",
     "highlights": ["Optical sensing through a wearable prototype.", "Embedded acquisition and signal processing.", "Exploratory non-invasive measurement workflow."],
     "tags": ["Optical Sensing", "Embedded Systems", "Signal Processing", "Wearable Prototype"],
+    "actions": [{"label": "Code", "url": "https://github.com/SenithJayakody/ir-glucose-sensing-prototype"}],
     "image": "/images/projects/blood-glucose-sensor.webp",
     "imageAlt": "Conceptual wearable optical sensor and signal-processing waveform"
   }

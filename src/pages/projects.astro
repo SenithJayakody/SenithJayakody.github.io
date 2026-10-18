@@ -113,6 +113,12 @@ const projects = projectsData;
 				letter-spacing: 0.1em;
 				margin-bottom: 0.5rem;
 			}
+			.project-course {
+				color: var(--color-text-muted);
+				font-size: 0.78rem;
+				line-height: 1.45;
+				margin: -0.15rem 0 0.65rem;
+			}
 			.project-card h3 {
 				font-family: var(--font-serif);
 				font-size: 1.4rem;
@@ -263,6 +269,7 @@ const projects = projectsData;
 							<div class="project-header">
 								<div class="project-category">{project.category}</div>
 								<span class="project-year">{project.period}</span>
+								{project.course && <div class="project-course">{project.course}</div>}
 								<h3>{project.title}</h3>
 							</div>
 							

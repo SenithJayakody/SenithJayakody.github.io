@@ -9,11 +9,12 @@ import { SITE_TITLE } from '../consts';
 <head>
   <BaseHead title={`About | ${SITE_TITLE}`} description="AI Research and Development Engineer working in signal processing, machine learning, generative models, and computational imaging." />
   <style>
-    .intro{max-width:760px;padding:3rem 0 2rem}.intro h1{font-size:clamp(3rem,7vw,5rem);letter-spacing:-.04em}.lead{font-size:1.2rem;line-height:1.8}
+    .intro{max-width:820px;padding:3rem 0 2rem}.intro h1{font-size:clamp(3rem,7vw,5rem);letter-spacing:-.04em}.lead{font-size:1.2rem;line-height:1.8}
     .layout{display:grid;grid-template-columns:1.6fr .8fr;gap:4rem}.item{padding:1.3rem 0;border-bottom:1px solid var(--color-border)}.item h3{margin:.2rem 0;font-size:1.2rem}.date{font-size:.78rem;color:var(--color-accent);font-weight:700;text-transform:uppercase;letter-spacing:.08em}.item p{margin:.4rem 0;font-size:.95rem}
-    .tags{display:flex;flex-wrap:wrap;gap:.5rem}.tag{border:1px solid var(--color-border);border-radius:999px;padding:.3rem .7rem;font-size:.82rem;color:var(--color-text-muted)}
+    .skill-group{margin:1.1rem 0}.skill-group h3{font-size:.9rem;margin:0 0 .55rem}.tags{display:flex;flex-wrap:wrap;gap:.5rem}.tag{border:1px solid var(--color-border);border-radius:999px;padding:.3rem .7rem;font-size:.82rem;color:var(--color-text-muted)}
     .results{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:1rem}.result-card{border:1px solid var(--color-border);border-radius:12px;padding:1rem}.result-card strong{display:block;color:var(--color-text-main)}.result-card p{margin:.35rem 0;font-size:.9rem}.document-links{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1rem}
-    @media(max-width:760px){.layout{grid-template-columns:1fr;gap:1rem}.results{grid-template-columns:1fr}}
+    .degree-field{color:var(--color-text-main);font-size:1.05rem;font-weight:700}.supporting{color:var(--color-text-muted);font-size:.85rem!important}
+    @media(max-width:760px){.intro h1{font-size:clamp(2.25rem,11vw,3rem)}.layout{grid-template-columns:1fr;gap:1rem}.results{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
@@ -21,56 +22,72 @@ import { SITE_TITLE } from '../consts';
 <main>
   <section class="intro">
     <span class="date">About</span>
-    <h1>Research across signals, images, and learning.</h1>
-    <p class="lead">I am an AI Research and Development Engineer at FARBE Technologies (Pvt) Ltd., Sri Lanka, and a graduate of Electrical and Electronic Engineering from the University of Peradeniya, where I obtained First Class Honours.</p>
-    <p class="lead">My research spans signal processing, machine learning, statistical learning, and computational imaging. I have worked on problems ranging from theoretical investigations of diffusion models and implicit neural representations to biomedical signal analysis, multispectral imaging, and embedded sensing systems.</p>
-    <p class="lead">I am interested in developing a deeper understanding of computational methods, investigating their capabilities and limitations, and applying them to challenging problems across scientific and engineering disciplines.</p>
+    <h1>Engineering Foundations, Interdisciplinary Research</h1>
+    <p class="lead">I am an Electrical and Electronic Engineering graduate from the University of Peradeniya, Sri Lanka, where I earned my B.Sc. Eng. (Hons.) with First Class Honours, achieving a GPA of 3.85/4.00 and ranking 6th among 115 students. I currently work as an AI Research and Development Engineer at FARBE Technologies (Pvt) Ltd.</p>
+    <p class="lead">My research spans signal processing, machine learning, statistical learning, generative modeling, and computational imaging. My experience includes both methodological investigations, such as the statistical properties of diffusion models and implicit neural representations, and application-driven research in biomedical signal analysis, image processing, and multispectral imaging.</p>
+    <p class="lead">I am interested in developing theoretically grounded computational methods, understanding their capabilities and limitations, and applying them to challenging problems across scientific and engineering disciplines.</p>
   </section>
   <div class="layout">
     <div>
       <h2>Experience</h2>
-      <article class="item"><span class="date">Aug 2026 — Present</span><h3>AI Research and Development Engineer · FARBE Technologies (Pvt) Ltd.</h3><p>Work on AI-based signal and image processing methods for research and industrial applications.</p></article>
-      <article class="item"><span class="date">Aug 2025 — Jul 2026</span><h3>Research Assistant · MARC, University of Peradeniya</h3><p>Worked on biomedical signal analysis and multispectral imaging, including computational methods, experimental evaluation, and sensing-system development.</p></article>
-      <article class="item"><span class="date">2023 — 2025</span><h3>Undergraduate Researcher · University of Peradeniya</h3><p>Investigated multispectral imaging and machine-learning methods for soil moisture, soil texture, and environmental sensing, alongside imaging-system development and evaluation.</p></article>
-      <article class="item"><span class="date">Jul — Oct 2024</span><h3>R&D Intern · Swartup Pvt Ltd</h3><p>Migrated embedded systems from ESP32 FreeRTOS to NRF5340 Zephyr and designed modular LoRa- and GSM-capable hardware.</p></article>
-      <article class="item"><span class="date">Jul — Oct 2023</span><h3>R&D Intern · Sri Lanka Telecom Digital Lab</h3><p>Developed IoT environmental monitoring systems with ESP32, MQTT, and integrated sensors.</p></article>
+      <article class="item"><span class="date">August 2026 — Present</span><h3>AI Research and Development Engineer · FARBE Technologies (Pvt) Ltd.</h3><p>Developing and evaluating AI-based signal and image processing methods for research and industrial applications, integrating machine-learning approaches with practical engineering requirements.</p></article>
+      <article class="item"><span class="date">August 2025 — July 2026</span><h3>Research Assistant · Multidisciplinary AI Research Centre (MARC), University of Peradeniya</h3><p>Investigated interpretable signal-processing and machine-learning methods for biomedical signals and multispectral imaging, developing feature-extraction and evaluation pipelines while contributing to experimental research and manuscript preparation.</p><p>The resulting EHG study, involving empirical mode decomposition and interpretable machine learning for preterm birth classification, is currently under review at PLOS ONE.</p></article>
+      <article class="item"><span class="date">2023 — 2025</span><h3>Undergraduate Researcher · University of Peradeniya</h3><p>Contributed to the development of a 13-band reflectance multispectral imaging system and machine-learning methods for soil characterization, addressing the need for non-destructive estimation of soil moisture and grain-size composition. This collaborative research contributed to peer-reviewed journal and conference publications.</p></article>
+      <article class="item"><span class="date">July — October 2024</span><h3>R&amp;D Intern · Swartup Pvt. Ltd.</h3><p>Implemented embedded-system migration from ESP32 with FreeRTOS to the nRF5340 with Zephyr, and developed modular hardware supporting LoRa and GSM communication.</p></article>
+      <article class="item"><span class="date">July — October 2023</span><h3>R&amp;D Intern · SLT Digital Lab, Sri Lanka Telecom PLC</h3><p>Developed an ESP32-based environmental monitoring system using MQTT and Firebase, integrating sensors for data acquisition and remote monitoring.</p></article>
 
       <h2>Education</h2>
       <article class="item">
-        <span class="date">2019 — 2025</span>
-        <h3>B.Sc. Eng. (Hons.) · University of Peradeniya</h3>
-        <p>Electrical and Electronic Engineering · First Class Honours · GPA 3.85 · Degree effective 19 August 2025.</p>
+        <span class="date">2021 — 2025</span>
+        <h3>Bachelor of Science in Engineering (Honours)</h3>
+        <p class="degree-field">Electrical and Electronic Engineering</p>
+        <p>University of Peradeniya, Sri Lanka</p>
+        <p>First Class Honours · GPA: 3.85/4.00 · Class Rank: 6/115</p>
         <div class="document-links"><a class="btn btn-outline" href="/documents/Academic-Transcript.pdf" target="_blank">View academic transcript</a></div>
       </article>
       <article class="item">
         <span class="date">2005 — 2019</span>
-        <h3>Trinity College Kandy</h3>
+        <h3>Trinity College, Kandy</h3>
         <p>Primary and secondary education, completing the G.C.E. Ordinary Level and Advanced Level examinations.</p>
         <div class="results">
           <div class="result-card">
-            <strong>G.C.E. Advanced Level · 2019</strong>
-            <p>Physical Science stream: Combined Mathematics — A, Physics — A, Chemistry — A.</p>
-            <p>General English — A · Common General Test — 74 · Z-score — 2.1582.</p>
+            <strong>Sri Lankan G.C.E. Advanced Level — National University Entrance Examination</strong>
+            <p>2019 · Physical Science Stream</p>
+            <p>Combined Mathematics — A · Physics — A · Chemistry — A</p>
+            <p>Z-score: 2.1582 · Top 4% examination standing, as reported by me.</p>
+            <p class="supporting">General English — A · Common General Test — 74</p>
             <a href="/documents/gce-al-result-sheet.pdf" target="_blank">View result sheet ↗</a>
           </div>
           <div class="result-card">
-            <strong>G.C.E. Ordinary Level · 2016</strong>
-            <p>Nine A grades, including Mathematics, Science, English, History, Buddhism, Sinhala, Music, Civic Education, and Health & Physical Education.</p>
+            <strong>Sri Lankan G.C.E. Ordinary Level — Secondary School Examination</strong>
+            <p>2016 · 9 A grades</p>
             <a href="/documents/gce-ol-result-sheet.pdf" target="_blank">View result sheet ↗</a>
           </div>
         </div>
       </article>
     </div>
     <aside>
-      <h2>Recognition</h2>
-      <article class="item"><span class="date">2025</span><h3>Second Runner-Up, Manamperi Award</h3><p>Best Undergraduate Project in Sri Lanka for multispectral imaging research.</p></article>
-      <article class="item"><span class="date">2024</span><h3>Silver Award, Sahasak Nimavum</h3><p>Engineering category, Inventions and Innovations Competition.</p></article>
-      <article class="item"><span class="date">2023</span><h3>2nd Place, ACES Hackathon</h3></article>
+      <h2>Recognition &amp; Awards</h2>
+      <article class="item"><span class="date">2025</span><h3>Second Runner-Up — Manamperi Award</h3><p>Recognition in the Best Undergraduate Project in Sri Lanka competition for multispectral imaging research.</p></article>
+      <article class="item"><span class="date">2024</span><h3>Silver Award — Sahasak Nimavum</h3><p>Engineering Category, National Inventions and Innovations Competition.</p><a href="https://www.facebook.com/share/p/1CgKpRyYwi/" target="_blank" rel="noopener noreferrer">View Award Post ↗</a></article>
+      <article class="item"><span class="date">2024</span><h3>Top 10 Finalist — Predicta v1.0</h3><p>IEEE Student Branch, University of Peradeniya.</p></article>
+      <article class="item"><span class="date">2023</span><h3>Finalist — IEEE Electronic Design Competition</h3><p>IEEE Sri Lanka Section.</p></article>
+      <article class="item"><span class="date">2023</span><h3>Second Place — ACES Hackathon</h3><p>Healthcare Category, University of Peradeniya.</p></article>
+      <article class="item"><span class="date">2022</span><h3>Fourth Place — IESL RoboGames</h3><p>University Category.</p></article>
 
       <h2>Technical toolkit</h2>
-      <div class="tags">
-        {['Python','C/C++','MATLAB','PyTorch','TensorFlow','scikit-learn','OpenCV','Signal processing','MFCC','Raspberry Pi','ESP32','NRF5340','Linux','Git','MQTT','Circuit design'].map(skill => <span class="tag">{skill}</span>)}
-      </div>
+      {[
+        ['Programming', ['Python', 'MATLAB', 'C/C++', 'Assembly Language']],
+        ['Machine Learning & Deep Learning', ['PyTorch', 'TensorFlow', 'scikit-learn', 'generative modeling', 'model evaluation']],
+        ['Signal & Image Processing', ['Time-frequency analysis', 'spectral analysis', 'EMD', 'wavelets', 'OpenCV', 'SciPy']],
+        ['Embedded Systems & Sensing', ['Raspberry Pi', 'ESP32', 'nRF5340', 'Zephyr', 'FreeRTOS', 'sensor integration', 'circuit design']],
+        ['Research Tools', ['Linux', 'Git', 'LaTeX', 'Altium Designer', 'EasyEDA']],
+      ].map(([group, skills]) => (
+        <section class="skill-group">
+          <h3>{group}</h3>
+          <div class="tags">{skills.map((skill) => <span class="tag">{skill}</span>)}</div>
+        </section>
+      ))}
     </aside>
   </div>
 </main>

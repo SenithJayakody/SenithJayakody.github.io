@@ -52,6 +52,19 @@
       "link": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7375082921369571328/"
     },
     {
+      "id": "aifs-session",
+      "yearGroup": "2025",
+      "date": "25 August 2025",
+      "title": "Artificial Intelligence Forum for Students (AIFS) — AI Session",
+      "venue": "University of Peradeniya, Sri Lanka",
+      "type": "Academic Workshop / AI Outreach",
+      "role": "MARC Team Member",
+      "description": "Participated in an artificial intelligence session jointly organized by the Artificial Intelligence Forum for Students (AIFS), the Physical Society of the University of Peradeniya, and the Multidisciplinary AI Research Centre (MARC).",
+      "image": "/images/activities/aifs-session.webp",
+      "imageAlt": "Artificial intelligence session organized by AIFS, the Physical Society, and MARC at the University of Peradeniya",
+      "link": "https://www.facebook.com/share/p/19B3KiLkcB/?mibextid=wwXIfr"
+    },
+    {
       "id": "diamond-jubilee-2025",
       "yearGroup": "2025",
       "date": "2025",
@@ -116,16 +129,6 @@
       "description": "Participated in interactive AI demonstrations and student-engagement activities, introducing visitors to research projects and practical applications of artificial intelligence.",
       "image": "/images/activities/dreamex-2025.webp",
       "imageAlt": "Interactive artificial intelligence demonstrations at DreamEx 2025"
-    },
-    {
-      "id": "aifs-session",
-      "yearGroup": "Date to be confirmed",
-      "title": "Artificial Intelligence Forum for Students Session",
-      "venue": "University of Peradeniya",
-      "type": "Academic Workshop",
-      "description": "Participated in an artificial intelligence session conducted through collaboration involving the Artificial Intelligence Forum for Students, the university's Physics Society, and MARC.",
-      "image": "/images/activities/aifs-session.webp",
-      "imageAlt": "Artificial intelligence academic workshop at the University of Peradeniya"
     }
   ],
   "service": [

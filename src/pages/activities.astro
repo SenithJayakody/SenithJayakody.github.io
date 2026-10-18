@@ -8,7 +8,7 @@ import activitiesData from '../data/activities.json';
 const eventGroups = ['2026', '2025', 'Date to be confirmed'].map((label) => ({
   label,
   events: activitiesData.events.filter((event) => event.yearGroup === label),
-}));
+})).filter((group) => group.events.length > 0);
 const service = activitiesData.service;
 ---
 <!doctype html>

@@ -13,8 +13,9 @@ import { url } from '../utils/paths';
     .hero{display:grid;grid-template-columns:1.5fr .8fr;gap:4rem;align-items:center;padding:5rem 0 4rem}
     .eyebrow{color:var(--color-accent);font-size:.78rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase}
     .hero h1{font-size:clamp(3rem,8vw,5.5rem);letter-spacing:-.055em;line-height:.94;margin:.7rem 0 1.25rem}
-    .role{font-family:var(--font-serif);font-size:1.35rem;color:var(--color-text-main);margin:0 0 1.25rem}
-    .intro{font-size:1.08rem;max-width:650px;line-height:1.75}
+    .role{font-family:var(--font-serif);font-size:1.35rem;color:var(--color-text-main);margin:0 0 .25rem}
+    .affiliation{font-size:.95rem;color:var(--color-accent);font-weight:700;margin:0 0 1.25rem}
+    .intro{font-size:1.08rem;max-width:700px;line-height:1.75;margin-bottom:.8rem}
     .actions{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:2rem}
     .portrait{aspect-ratio:1;border-radius:28px;background:linear-gradient(145deg,#0b3954,#087e8b);display:grid;place-items:center;color:#fff;font-family:var(--font-serif);font-size:5.5rem;box-shadow:var(--shadow-lg);position:relative;overflow:hidden}
     .portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
@@ -22,7 +23,7 @@ import { url } from '../utils/paths';
     .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--color-border);border:1px solid var(--color-border);border-radius:16px;overflow:hidden;margin:1rem 0 4rem}
     .fact{background:var(--color-bg);padding:1.5rem}.fact strong{display:block;font-family:var(--font-serif);font-size:1.25rem}.fact span{font-size:.85rem;color:var(--color-text-muted)}
     .section{padding:2rem 0 3rem}.section h2{margin-top:0}
-    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+    .cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.2rem}
     .card{border:1px solid var(--color-border);border-radius:14px;padding:1.4rem;background:var(--color-bg-offset)}
     .card small{color:var(--color-accent);font-weight:700;text-transform:uppercase;letter-spacing:.08em}.card h3{font-size:1.15rem;margin:.6rem 0}.card p{font-size:.92rem;margin:0}
     .connect{display:flex;gap:1rem;flex-wrap:wrap}
@@ -36,8 +37,10 @@ import { url } from '../utils/paths';
       <div>
         <span class="eyebrow">Researcher · Engineer · Builder</span>
         <h1>Senith<br/>Jayakody</h1>
-        <p class="role">Research Assistant at MARC, University of Peradeniya</p>
-        <p class="intro">I build intelligent sensing systems at the intersection of machine learning, signal processing, computational imaging, and embedded hardware—translating research into robust tools for healthcare, agriculture, and environmental monitoring.</p>
+        <p class="role">AI Research and Development Engineer</p>
+        <p class="affiliation">FARBE Technologies (Pvt) Ltd.</p>
+        <p class="intro">My research interests span signal processing, machine learning, statistical learning, and computational imaging. I work on developing and evaluating computational methods, with experience in generative models, biomedical signal analysis, image processing, and intelligent sensing systems.</p>
+        <p class="intro">I am interested in both the theoretical foundations of these methods and their applications across different scientific and engineering domains.</p>
         <div class="actions">
           <a class="btn" href={url('/publications')}>Explore publications</a>
           <a class="btn btn-outline" href={url('/activities')}>Workshops & outreach</a>
@@ -50,25 +53,26 @@ import { url } from '../utils/paths';
     </section>
 
     <div class="facts">
-      <div class="fact"><strong>5 publications</strong><span>Biomedical AI, imaging, and generative audio</span></div>
+      <div class="fact"><strong>5 publications</strong><span>Signal, image, and generative modeling research</span></div>
       <div class="fact"><strong>First Class · 3.85 GPA</strong><span>B.Sc. Eng. (Hons.), University of Peradeniya</span></div>
       <div class="fact"><strong>2 national awards</strong><span>Manamperi Award and Sahasak Nimavum</span></div>
     </div>
 
     <section class="section">
       <span class="eyebrow">Research focus</span>
-      <h2>Engineering reliable AI from signal to system</h2>
+      <h2>Methods across signals, images, and learning systems</h2>
       <div class="cards">
-        <article class="card"><small>Biomedical AI</small><h3>Preterm birth prediction</h3><p>Interpretable prediction from uterine electrophysiological signals, with dedicated acquisition hardware for clinically useful datasets.</p></article>
-        <article class="card"><small>Computational imaging</small><h3>Multispectral sensing</h3><p>Field-deployable imaging and machine-learning pipelines for soil composition, moisture, and environmental monitoring.</p></article>
-        <article class="card"><small>Edge intelligence</small><h3>Embedded sensing systems</h3><p>Hardware–software co-design using Raspberry Pi, ESP32, NRF5340, sensor integration, calibration, and real-time signal processing.</p></article>
+        <article class="card"><small>Signals & inference</small><h3>Signal Processing & Statistical Learning</h3><p>Time-frequency analysis, feature extraction, statistical modeling, and machine learning.</p></article>
+        <article class="card"><small>Learning-based generation</small><h3>Generative Models & Deep Learning</h3><p>Diffusion models, noise prediction, generative fidelity, and learning-based methods.</p></article>
+        <article class="card"><small>Images & inverse methods</small><h3>Image Processing & Computational Imaging</h3><p>Implicit neural representations, inverse problems, image reconstruction, and multispectral imaging.</p></article>
+        <article class="card"><small>Interdisciplinary applications</small><h3>Applied AI & Intelligent Systems</h3><p>Applying AI and signal-processing methods to biomedical, environmental, and engineering problems.</p></article>
       </div>
     </section>
 
     <section class="section">
-      <span class="eyebrow">Currently</span>
-      <h2>Research at MARC</h2>
-      <p>Leading work on spectrotemporal features and robust models for preterm birth prediction; developing biomedical acquisition hardware; supervising multispectral imaging research; and improving a commercially scalable, field-deployable MSI platform.</p>
+      <span class="eyebrow">Current work</span>
+      <h2>Current Research</h2>
+      <p>At FARBE Technologies, I work on AI-based signal and image processing solutions for research and industrial applications. My broader ongoing research interests include diffusion models, implicit neural representations, and biomedical signal processing.</p>
       <div class="connect">
         {SOCIAL_LINKS.map(link => <a href={link.href} target={link.href.startsWith('mailto:') ? undefined : '_blank'}>{link.label} ↗</a>)}
       </div>

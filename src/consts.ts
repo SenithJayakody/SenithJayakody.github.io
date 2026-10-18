@@ -2,14 +2,14 @@
 // You can import this data from anywhere in your site by using the `import` keyword.
 
 export const SITE_TITLE = 'Senith Jayakody';
-export const SITE_DESCRIPTION = 'Researcher in machine learning, signal processing, multispectral imaging, and biomedical sensing.';
+export const SITE_DESCRIPTION = 'Researcher and Engineer working in signal processing, machine learning, generative models, and computational imaging.';
 
 export const CV_URL = '/resume.pdf';
 
 export const CONTACT = {
-  organization: 'Multidisciplinary AI Research Centre (MARC)',
+  organization: 'FARBE Technologies (Pvt) Ltd.',
   addressLines: [
-    'University of Peradeniya, Sri Lanka',
+    'Sri Lanka',
   ],
   emails: [
     'senithjayakody2000@gmail.com',

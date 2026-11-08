@@ -2,7 +2,7 @@
 // You can import this data from anywhere in your site by using the `import` keyword.
 
 export const SITE_TITLE = 'Senith Jayakody';
-export const SITE_DESCRIPTION = 'Researcher and Engineer working in signal processing, machine learning, generative models, and computational imaging.';
+export const SITE_DESCRIPTION = 'Electrical and Electronic Engineering graduate researching signal processing, machine learning, computational imaging, generative models, and intelligent sensing.';
 
 export const CV_URL = '/resume.pdf';
 

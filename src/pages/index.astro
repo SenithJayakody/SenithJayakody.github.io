@@ -4,31 +4,57 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION, SOCIAL_LINKS } from '../consts';
 import { url } from '../utils/paths';
+import projectsData from '../data/projects-portfolio.json';
+
+const selectedResearch = [
+  {
+    id: 'preterm-birth-detection',
+    title: 'Preterm Birth Prediction From EHG Signals',
+    summary: 'Signal decomposition, interpretable features, and machine-learning evaluation.',
+    context: 'Manuscript under review at PLOS ONE',
+  },
+  {
+    id: 'soil-composition-msi',
+    title: 'Multispectral Imaging for Soil Characterization',
+    summary: 'Spectral image analysis, machine-learning estimation, and instrumentation.',
+    context: 'Peer-reviewed publication in IEEE Access (2026)',
+  },
+  {
+    id: 'inr-colorization',
+    title: 'Colour-INR: Image Colorization Using Implicit Neural Representations',
+    summary: 'Sparse-guided image reconstruction and computational imaging.',
+    context: 'Manuscript under review at ICLR 2027',
+  },
+].map((item) => ({ ...item, project: projectsData.find((project) => project.id === item.id) }));
+
+const scholar = SOCIAL_LINKS.find((link) => link.label === 'Google Scholar');
+const github = SOCIAL_LINKS.find((link) => link.label === 'GitHub');
 ---
 <!doctype html>
 <html lang="en">
 <head>
   <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   <style>
-    .hero{display:grid;grid-template-columns:1.5fr .8fr;gap:4rem;align-items:center;padding:5rem 0 4rem}
-    .eyebrow{color:var(--color-accent);font-size:.78rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase}
-    .hero h1{font-size:clamp(3rem,8vw,5.5rem);letter-spacing:-.055em;line-height:.94;margin:.7rem 0 1.25rem}
-    .role{font-family:var(--font-serif);font-size:1.35rem;color:var(--color-text-main);margin:0 0 .25rem}
-    .affiliation{font-size:.95rem;color:var(--color-accent);font-weight:700;margin:0 0 1.25rem}
-    .affiliation a{color:inherit;text-decoration:none}.affiliation a:hover,.affiliation a:focus-visible{text-decoration:underline;text-underline-offset:.18em}
-    .intro{font-size:1.08rem;max-width:700px;line-height:1.75;margin-bottom:.8rem}
-    .actions{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:2rem}
-    .portrait{aspect-ratio:1;border-radius:28px;background:linear-gradient(145deg,#0b3954,#087e8b);display:grid;place-items:center;color:#fff;font-family:var(--font-serif);font-size:5.5rem;box-shadow:var(--shadow-lg);position:relative;overflow:hidden}
-    .portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-    .portrait:after{content:"";position:absolute;inset:12px;border:1px solid rgba(255,255,255,.35);border-radius:20px}
-    .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--color-border);border:1px solid var(--color-border);border-radius:16px;overflow:hidden;margin:1rem 0 4rem}
-    .fact{background:var(--color-bg);padding:1.5rem}.fact strong{display:block;font-family:var(--font-serif);font-size:1.25rem}.fact span{font-size:.85rem;color:var(--color-text-muted)}
-    .section{padding:2rem 0 3rem}.section h2{margin-top:0}
-    .cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.2rem}
-    .card{border:1px solid var(--color-border);border-radius:14px;padding:1.4rem;background:var(--color-bg-offset)}
-    .card small{color:var(--color-accent);font-weight:700;text-transform:uppercase;letter-spacing:.08em}.card h3{font-size:1.15rem;margin:.6rem 0}.card p{font-size:.92rem;margin:0}
-    .connect{display:flex;gap:1rem;flex-wrap:wrap}
-    @media(max-width:760px){.hero{grid-template-columns:1fr;padding:3rem 0}.portrait{max-width:300px}.facts,.cards{grid-template-columns:1fr}.hero h1{font-size:3.5rem}}
+    .hero{align-items:center;display:grid;gap:clamp(2rem,6vw,4.5rem);grid-template-columns:minmax(0,1fr) minmax(220px,300px);padding:3.75rem 0 2.5rem}
+    .hero>div{min-width:0}
+    .hero h1{font-size:clamp(3.25rem,7vw,5.25rem);letter-spacing:-.055em;line-height:.95;margin:0 0 1rem}
+    .academic-id{color:var(--color-accent);font-size:1rem;font-weight:700;letter-spacing:.015em;margin:0 0 1.15rem}
+    .bio{font-size:1rem;line-height:1.7;margin:.55rem 0;max-width:690px;overflow-wrap:anywhere}
+    .bio a{color:var(--color-text-main);font-weight:600;text-decoration:underline;text-decoration-color:color-mix(in srgb,var(--color-accent) 45%,transparent);text-underline-offset:.16em}
+    .bio a:hover,.bio a:focus-visible{color:var(--color-accent);text-decoration-color:currentColor}
+    .actions{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1.4rem}.actions .btn{font-size:.86rem;padding:.55rem .85rem}
+    .portrait{aspect-ratio:1;background:var(--color-bg-offset);border:1px solid var(--color-border);border-radius:22px;overflow:hidden;position:relative}
+    .portrait img{height:100%;object-fit:cover;width:100%}
+    .highlights{border-block:1px solid var(--color-border);display:grid;grid-template-columns:repeat(3,1fr);margin:0 0 3.25rem;padding:.95rem 0}
+    .highlight{padding:.1rem 1.1rem}.highlight+.highlight{border-left:1px solid var(--color-border)}.highlight strong{display:block;font-family:var(--font-serif);font-size:1.02rem}.highlight span{color:var(--color-text-muted);font-size:.78rem}
+    .section-head{align-items:end;display:flex;gap:1rem;justify-content:space-between;margin-bottom:1.15rem}.section-head h2{border:0;margin:0;padding:0}.section-head p{font-size:.9rem;margin:0}
+    .research-list{border-top:1px solid var(--color-border)}
+    .research-item{display:grid;gap:1.25rem;grid-template-columns:1fr auto;padding:1.15rem .15rem;border-bottom:1px solid var(--color-border)}
+    .research-item h3{font-size:1.12rem;margin:0 0 .3rem}.research-item h3 a{color:var(--color-text-main);text-decoration:none}.research-item h3 a:hover,.research-item h3 a:focus-visible{color:var(--color-accent);text-decoration:underline}
+    .research-item p{font-size:.9rem;margin:.15rem 0}.research-context{color:var(--color-accent)!important;font-size:.78rem!important;font-weight:700}
+    .research-actions{align-items:center;display:flex;flex-wrap:wrap;gap:.75rem;justify-content:flex-end}.research-actions a{font-size:.8rem;font-weight:700}
+    .all-links{display:flex;flex-wrap:wrap;gap:1rem;margin-top:1.25rem}.all-links a{font-size:.88rem;font-weight:700}
+    @media(max-width:760px){.hero{grid-template-columns:minmax(0,1fr);padding:2.6rem 0 2rem}.hero h1{font-size:clamp(3rem,16vw,4rem)}.portrait{max-width:230px}.highlights{grid-template-columns:1fr}.highlight{padding:.65rem .1rem}.highlight+.highlight{border-left:0;border-top:1px solid var(--color-border)}.research-item{grid-template-columns:1fr}.research-actions{justify-content:flex-start}}
   </style>
 </head>
 <body>
@@ -36,46 +62,52 @@ import { url } from '../utils/paths';
   <main>
     <section class="hero">
       <div>
-        <span class="eyebrow">Researcher · Engineer · Builder</span>
-        <h1>Senith<br/>Jayakody</h1>
-        <p class="role">AI Research and Development Engineer</p>
-        <p class="affiliation"><a href="https://farbe.lk/" target="_blank" rel="noopener noreferrer">FARBE Technologies (Pvt) Ltd.</a></p>
-        <p class="intro">My research interests span signal processing, machine learning, statistical learning, and computational imaging. I work on developing and evaluating computational methods, with experience in generative models, biomedical signal analysis, image processing, and intelligent sensing systems.</p>
-        <p class="intro">I am interested in both the theoretical foundations of these methods and their applications across different scientific and engineering domains.</p>
-        <div class="actions">
-          <a class="btn" href={url('/publications')}>Explore publications</a>
-          <a class="btn btn-outline" href={url('/activities')}>Workshops & outreach</a>
+        <h1>Senith<br />Jayakody</h1>
+        <p class="academic-id">Electrical and Electronic Engineering Graduate · University of Peradeniya</p>
+        <p class="bio">I currently work as an AI Research and Development Engineer at <a href="https://farbe.lk/" target="_blank" rel="noopener noreferrer">FARBE Technologies</a>, developing and evaluating signal- and image-processing methods.</p>
+        <p class="bio">Previously, I was a Research Assistant at <a href="https://marcuop.netlify.app/" target="_blank" rel="noopener noreferrer">MARC</a>, University of Peradeniya, working with <a href="https://eng.pdn.ac.lk/deee/index.php/people/RoshanG" target="_blank" rel="noopener noreferrer">Prof. Roshan Godaliyadda</a>, <a href="https://eng.pdn.ac.lk/deee/people/ParakramaE" target="_blank" rel="noopener noreferrer">Prof. Parakrama Ekanayake</a>, and <a href="https://eng.pdn.ac.lk/deee/people/VijithaH" target="_blank" rel="noopener noreferrer">Prof. Vijitha Herath</a>. My research spans signal processing, machine learning, computational imaging, and intelligent sensing.</p>
+        <nav class="actions" aria-label="Profile resources">
+          <a class="btn" href={url('/publications')}>Publications</a>
           <a class="btn btn-outline" href={url('/resume.pdf')} target="_blank">Download CV</a>
-        </div>
+          {scholar && <a class="btn btn-outline" href={scholar.href} target="_blank" rel="noopener noreferrer">Google Scholar</a>}
+          {github && <a class="btn btn-outline" href={github.href} target="_blank" rel="noopener noreferrer">GitHub</a>}
+          <a class="btn btn-outline" href={url('/projects')}>Projects</a>
+        </nav>
       </div>
-      <div class="portrait" aria-label="Portrait of Senith Jayakody">
-        <img src={url('/profile.png')} alt="Senith Jayakody" onerror="this.remove()" />
-      </div>
-    </section>
-
-    <div class="facts">
-      <div class="fact"><strong>4 peer-reviewed publications</strong><span>1 journal article · 3 conference papers</span></div>
-      <div class="fact"><strong>First Class · 3.85 GPA</strong><span>B.Sc. Eng. (Hons.), University of Peradeniya</span></div>
-      <div class="fact"><strong>2 national awards</strong><span>Manamperi Award and Sahasak Nimavum</span></div>
-    </div>
-
-    <section class="section">
-      <span class="eyebrow">Research focus</span>
-      <h2>From Theory to Real-World Applications</h2>
-      <div class="cards">
-        <article class="card"><small>Signals & inference</small><h3>Signal Processing & Statistical Learning</h3><p>Time-frequency analysis, feature extraction, statistical modeling, and machine learning.</p></article>
-        <article class="card"><small>Learning-based generation</small><h3>Generative Models & Deep Learning</h3><p>Diffusion models, noise prediction, generative fidelity, and learning-based methods.</p></article>
-        <article class="card"><small>Images & inverse methods</small><h3>Image Processing & Computational Imaging</h3><p>Implicit neural representations, inverse problems, image reconstruction, and multispectral imaging.</p></article>
-        <article class="card"><small>Interdisciplinary applications</small><h3>Applied AI & Intelligent Systems</h3><p>Applying AI and signal-processing methods to biomedical, environmental, and engineering problems.</p></article>
+      <div class="portrait">
+        <img src={url('/profile.png')} alt="Portrait of Senith Jayakody" width="800" height="800" />
       </div>
     </section>
 
-    <section class="section">
-      <span class="eyebrow">Current work</span>
-      <h2>Research and Development</h2>
-      <p>At FARBE Technologies, I work on AI-based signal and image processing solutions for research and industrial applications. My broader ongoing research interests include biomedical signal processing, image processing, diffusion models, and implicit neural representations.</p>
-      <div class="connect">
-        {SOCIAL_LINKS.map(link => <a href={link.href} target={link.href.startsWith('mailto:') ? undefined : '_blank'}>{link.label} ↗</a>)}
+    <section class="highlights" aria-label="Academic highlights">
+      <div class="highlight"><strong>B.Sc. Eng. (Hons.)</strong><span>First Class Honours</span></div>
+      <div class="highlight"><strong>GPA 3.85/4.00</strong><span>University of Peradeniya</span></div>
+      <div class="highlight"><strong>4 peer-reviewed publications</strong><span>1 journal article · 3 conference papers</span></div>
+    </section>
+
+    <section aria-labelledby="selected-research-heading">
+      <div class="section-head">
+        <div><h2 id="selected-research-heading">Selected Research</h2></div>
+        <p>Methodological and application-driven work</p>
+      </div>
+      <div class="research-list">
+        {selectedResearch.map((item) => (
+          <article class="research-item">
+            <div>
+              <h3><a href={url(`/projects#${item.id}`)}>{item.title}</a></h3>
+              <p>{item.summary}</p>
+              <p class="research-context">{item.context}</p>
+            </div>
+            <div class="research-actions">
+              <a href={url(`/projects#${item.id}`)}>Project</a>
+              {item.project?.actions?.slice(0, 2).map((action) => <a href={action.url} target="_blank" rel="noopener noreferrer">{action.label}</a>)}
+            </div>
+          </article>
+        ))}
+      </div>
+      <div class="all-links">
+        <a href={url('/projects')}>View All Projects →</a>
+        <a href={url('/publications')}>View All Publications →</a>
       </div>
     </section>
   </main>

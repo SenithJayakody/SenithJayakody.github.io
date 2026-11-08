@@ -20,7 +20,7 @@
 	--color-bg-mobile-menu: rgba(255, 255, 255, 0.95);
 
 	/* Spacing & UI */
-	--max-width: 1080px;
+	--max-width: 1120px;
 	--radius: 8px;
 	--shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
 	--shadow-md: 0 4px 6px rgba(0, 0, 0, 0.08);
@@ -80,12 +80,15 @@ html {
 }
 
 body {
+	display: flex;
+	flex-direction: column;
 	font-family: var(--font-sans);
 	background-color: var(--color-bg);
 	color: var(--color-text-main);
 	line-height: 1.6;
 	margin: 0;
-	font-size: 18px;
+	font-size: 17px;
+	min-height: 100vh;
 	transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -93,7 +96,7 @@ main {
 	width: 100%;
 	max-width: var(--max-width);
 	margin: 0 auto;
-	padding: 3rem 1rem;
+	padding: 2.75rem 1.25rem 3.5rem;
 }
 
 h1,
@@ -108,16 +111,13 @@ h5 {
 }
 
 h1 {
-	font-size: 2.5rem;
+	font-size: clamp(2.35rem, 5vw, 3.5rem);
 	margin-top: 0;
 }
 
 h2 {
-	font-size: 2rem;
+	font-size: clamp(1.6rem, 3vw, 2rem);
 	margin-top: 2rem;
-	border-bottom: 2px solid var(--color-accent);
-	padding-bottom: 0.5rem;
-	display: inline-block;
 }
 
 h3 {
@@ -140,6 +140,11 @@ a {
 a:hover {
 	opacity: 0.8;
 	text-decoration: underline;
+}
+
+:where(a, button, summary):focus-visible {
+	outline: 3px solid color-mix(in srgb, var(--color-accent) 45%, transparent);
+	outline-offset: 3px;
 }
 
 /* Buttons */
@@ -363,12 +368,8 @@ a:hover {
 	border-radius: var(--radius);
 }
 
-/* Dark mode optimization for images */
-[data-theme="dark"] img {
-	filter: brightness(0.9);
-}
-
 @media (max-width: 720px) {
+	main { padding: 2rem 1rem 3rem; }
 	.blog-row {
 		flex-direction: column;
 	}

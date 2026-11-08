@@ -113,10 +113,11 @@ const noteFor = (entry: BibEntry) => {
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={`Publications | ${SITE_TITLE}`} description="Academic Publications" />
+		<BaseHead title={`Publications | ${SITE_TITLE}`} description="Peer-reviewed publications, manuscripts under review, and preprints by Senith Jayakody." />
 		<style>
-			.publication-section { margin-top: 2.75rem; }
-			.publication-section h2 { margin: 0 0 1.5rem; }
+			.page-intro{color:var(--color-text-muted);max-width:680px;margin:.35rem 0 2.25rem}
+			.publication-section { margin-top: 2.35rem; }
+			.publication-section h2 { margin: 0 0 1rem; }
 			.publication-item { position: relative; }
 			.pub-links { display: flex; align-items: center; flex-wrap: wrap; gap: .65rem; margin-top: .65rem; font-size: .85rem; }
 			.pub-links a, .pub-links summary { font-weight: 600; }
@@ -125,6 +126,7 @@ const noteFor = (entry: BibEntry) => {
 			.self-author { font-weight: 700; text-decoration: underline; text-underline-offset: .16em; text-decoration-thickness: .08em; }
 			.equal-contribution-marker { margin-left: .08em; font-size: .72em; line-height: 0; }
 			.contribution-note { margin: .35rem 0 0; font-size: .82rem; color: var(--color-text-muted); }
+			.pub-title{font-size:1.18rem;line-height:1.38}.pub-authors,.pub-venue{font-size:.9rem}.publication-item{margin-bottom:1.15rem;padding-bottom:1.15rem}
 			.bibtex-details { position: relative; }
 			.bibtex-details summary { cursor: pointer; color: var(--color-accent); list-style: none; }
 			.bibtex-details summary::-webkit-details-marker { display: none; }
@@ -143,6 +145,7 @@ const noteFor = (entry: BibEntry) => {
 		<Header />
 		<main>
 			<h1>Publications</h1>
+			<p class="page-intro">Seven research outputs: four peer-reviewed publications, two manuscripts under review, and one standalone preprint.</p>
 
 			{sections.map((section) => (
 				<section class="publication-section">
@@ -151,6 +154,8 @@ const noteFor = (entry: BibEntry) => {
 						{section.entries.map((entry) => {
 							const bibtex = createBibTeX(entry);
 							const equalContributors = equalContributionIndexes(entry);
+							const doiUrl = entry.fields.doi ? `https://doi.org/${entry.fields.doi}` : '';
+							const showDoiLink = Boolean(entry.fields.doi && entry.fields.paper !== doiUrl);
 							return (
 								<article class="publication-item">
 									<span class="pub-title">{clean(entry.fields.title)}</span>
@@ -179,7 +184,7 @@ const noteFor = (entry: BibEntry) => {
 									{noteFor(entry) && noteFor(entry) !== entry.fields.status && <p class="pub-note">{noteFor(entry)}</p>}
 									<div class="pub-links">
 										{entry.fields.paper && <a href={entry.fields.paper} target="_blank" rel="noopener noreferrer">Paper</a>}
-										{entry.fields.doi && <a href={`https://doi.org/${entry.fields.doi}`} target="_blank" rel="noopener noreferrer">DOI</a>}
+										{showDoiLink && <a href={doiUrl} target="_blank" rel="noopener noreferrer">DOI</a>}
 										{entry.fields.arxiv && <a href={entry.fields.arxiv} target="_blank" rel="noopener noreferrer">arXiv</a>}
 										{entry.fields.code && <a href={entry.fields.code} target="_blank" rel="noopener noreferrer">Code</a>}
 										<details name="bibtex" class="bibtex-details">

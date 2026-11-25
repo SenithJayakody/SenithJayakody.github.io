@@ -70,7 +70,7 @@ const sortEntries = (entries: BibEntry[]) => entries.sort((a, b) => {
 const publications = parseBibTeX(bibFileRaw);
 const sections = [
     { title: 'Peer-Reviewed Publications', entries: sortEntries(publications.filter((entry) => entry.fields.category === 'peer-reviewed')) },
-    { title: 'Manuscripts Under Review', entries: sortEntries(publications.filter((entry) => entry.fields.category === 'under-review')) },
+    { title: 'Submitted and Under-Review Manuscripts', entries: sortEntries(publications.filter((entry) => entry.fields.category === 'under-review')) },
     { title: 'Preprints', entries: sortEntries(publications.filter((entry) => entry.fields.category === 'preprint')) },
 ];
 
@@ -145,7 +145,7 @@ const noteFor = (entry: BibEntry) => {
 		<Header />
 		<main>
 			<h1>Publications</h1>
-			<p class="page-intro">Seven research outputs: four peer-reviewed publications, two manuscripts under review, and one standalone preprint.</p>
+			<p class="page-intro">Seven research outputs: four peer-reviewed publications, two submitted or under-review manuscripts, and one standalone preprint.</p>
 
 			{sections.map((section) => (
 				<section class="publication-section">

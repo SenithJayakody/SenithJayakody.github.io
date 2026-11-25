@@ -1,30 +1,5 @@
 [
   {
-    "id": "diffusion-theory",
-    "title": "Theoretical Analysis of Diffusion Models",
-    "period": "2026–Present",
-    "status": "Ongoing Research",
-    "category": "Generative AI / Statistical Learning",
-    "description": "Investigating the statistical properties of denoising diffusion models, particularly the relationship between predicted-noise characteristics and generative fidelity. The research examines covariance structure, trace-energy behavior, and regularization strategies for improving the statistical properties of model predictions.",
-    "highlights": ["Statistical analysis of predicted noise in diffusion models.", "Investigation of covariance structure and trace-energy behavior.", "Exploration of regularization strategies and their relationship to generative fidelity.", "Evaluation through theoretical analysis and numerical experiments."],
-    "tags": ["Diffusion Models", "Generative AI", "Statistical Learning", "Covariance Analysis", "Regularization", "Deep Learning"],
-    "image": "/images/projects/diffusion-theory.webp",
-    "imageAlt": "Conceptual illustration of noise evolving into coherent structure through a diffusion process"
-  },
-  {
-    "id": "inr-colorization",
-    "title": "Image Colorization Using Implicit Neural Representations",
-    "period": "2026–Present",
-    "status": "Ongoing Research",
-    "category": "Computational Imaging / Generative AI",
-    "description": "Investigating image colorization using implicit neural representations, where continuous coordinate-based neural models reconstruct image color information under sparse color guidance. The work studies the role of image structure, color constraints, and guided optimization in recovering plausible color representations.",
-    "highlights": ["Coordinate-based implicit neural representations.", "Image colorization formulated as an inverse problem.", "Sparse color-hint guidance and reconstruction constraints.", "Investigation of spatial structure and color propagation."],
-    "tags": ["Implicit Neural Representations", "Image Colorization", "Inverse Problems", "Computational Imaging", "Deep Learning"],
-    "output": {"label": "Manuscript under review at ICLR 2027", "title": "Colour-INR: Implicit Neural Representation for Image Colorization through Colour Guidance"},
-    "image": "/images/projects/inr-colorization.webp",
-    "imageAlt": "Conceptual grayscale-to-color reconstruction guided by sparse color points and a coordinate grid"
-  },
-  {
     "id": "preterm-birth-detection",
     "title": "Preterm Birth Prediction From EHG and Tocographic Signals",
     "period": "2025–Present",
@@ -41,6 +16,31 @@
     ],
     "image": "/images/projects/preterm-birth-ehg.webp",
     "imageAlt": "Conceptual EHG waveforms, decomposed signal components, and time-frequency patterns"
+  },
+  {
+    "id": "inr-colorization",
+    "title": "Image Colorization Using Implicit Neural Representations",
+    "period": "2026–Present",
+    "status": "Ongoing Research",
+    "category": "Computational Imaging / Generative AI",
+    "description": "Investigating image colorization using implicit neural representations, where continuous coordinate-based neural models reconstruct image color information under sparse color guidance. The work studies the role of image structure, color constraints, and guided optimization in recovering plausible color representations.",
+    "highlights": ["Coordinate-based implicit neural representations.", "Image colorization formulated as an inverse problem.", "Sparse color-hint guidance and reconstruction constraints.", "Investigation of spatial structure and color propagation."],
+    "tags": ["Implicit Neural Representations", "Image Colorization", "Inverse Problems", "Computational Imaging", "Deep Learning"],
+    "output": {"label": "Submitted to CVPR 2027", "title": "Chroma-INR: Guiding Implicit Neural Representation for Image Colourization and Beyond"},
+    "image": "/images/projects/inr-colorization.webp",
+    "imageAlt": "Conceptual grayscale-to-color reconstruction guided by sparse color points and a coordinate grid"
+  },
+  {
+    "id": "diffusion-theory",
+    "title": "Theoretical Analysis of Diffusion Models",
+    "period": "2026–Present",
+    "status": "Ongoing Research",
+    "category": "Generative AI / Statistical Learning",
+    "description": "Investigating the statistical properties of denoising diffusion models, particularly the relationship between predicted-noise characteristics and generative fidelity. The research examines covariance structure, trace-energy behavior, and regularization strategies for improving the statistical properties of model predictions.",
+    "highlights": ["Statistical analysis of predicted noise in diffusion models.", "Investigation of covariance structure and trace-energy behavior.", "Exploration of regularization strategies and their relationship to generative fidelity.", "Evaluation through theoretical analysis and numerical experiments."],
+    "tags": ["Diffusion Models", "Generative AI", "Statistical Learning", "Covariance Analysis", "Regularization", "Deep Learning"],
+    "image": "/images/projects/diffusion-theory.webp",
+    "imageAlt": "Conceptual illustration of noise evolving into coherent structure through a diffusion process"
   },
   {
     "id": "soil-composition-msi",

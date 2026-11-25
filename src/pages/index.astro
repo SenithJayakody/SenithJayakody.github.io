@@ -4,29 +4,6 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION, SOCIAL_LINKS } from '../consts';
 import { url } from '../utils/paths';
-import projectsData from '../data/projects-portfolio.json';
-
-const selectedResearch = [
-  {
-    id: 'preterm-birth-detection',
-    title: 'Preterm Birth Prediction From EHG Signals',
-    summary: 'Signal decomposition, interpretable features, and machine-learning evaluation.',
-    context: 'Manuscript under review at PLOS ONE',
-  },
-  {
-    id: 'soil-composition-msi',
-    title: 'Multispectral Imaging for Soil Characterization',
-    summary: 'Spectral image analysis, machine-learning estimation, and instrumentation.',
-    context: 'Peer-reviewed publication in IEEE Access (2026)',
-  },
-  {
-    id: 'inr-colorization',
-    title: 'Colour-INR: Image Colorization Using Implicit Neural Representations',
-    summary: 'Sparse-guided image reconstruction and computational imaging.',
-    context: 'Manuscript under review at ICLR 2027',
-  },
-].map((item) => ({ ...item, project: projectsData.find((project) => project.id === item.id) }));
-
 const scholar = SOCIAL_LINKS.find((link) => link.label === 'Google Scholar');
 const github = SOCIAL_LINKS.find((link) => link.label === 'GitHub');
 ---
@@ -45,16 +22,7 @@ const github = SOCIAL_LINKS.find((link) => link.label === 'GitHub');
     .actions{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1.4rem}.actions .btn{font-size:.86rem;padding:.55rem .85rem}
     .portrait{aspect-ratio:1;background:var(--color-bg-offset);border:1px solid var(--color-border);border-radius:22px;overflow:hidden;position:relative}
     .portrait img{height:100%;object-fit:cover;width:100%}
-    .highlights{border-block:1px solid var(--color-border);display:grid;grid-template-columns:repeat(3,1fr);margin:0 0 3.25rem;padding:.95rem 0}
-    .highlight{padding:.1rem 1.1rem}.highlight+.highlight{border-left:1px solid var(--color-border)}.highlight strong{display:block;font-family:var(--font-serif);font-size:1.02rem}.highlight span{color:var(--color-text-muted);font-size:.78rem}
-    .section-head{align-items:end;display:flex;gap:1rem;justify-content:space-between;margin-bottom:1.15rem}.section-head h2{border:0;margin:0;padding:0}.section-head p{font-size:.9rem;margin:0}
-    .research-list{border-top:1px solid var(--color-border)}
-    .research-item{display:grid;gap:1.25rem;grid-template-columns:1fr auto;padding:1.15rem .15rem;border-bottom:1px solid var(--color-border)}
-    .research-item h3{font-size:1.12rem;margin:0 0 .3rem}.research-item h3 a{color:var(--color-text-main);text-decoration:none}.research-item h3 a:hover,.research-item h3 a:focus-visible{color:var(--color-accent);text-decoration:underline}
-    .research-item p{font-size:.9rem;margin:.15rem 0}.research-context{color:var(--color-accent)!important;font-size:.78rem!important;font-weight:700}
-    .research-actions{align-items:center;display:flex;flex-wrap:wrap;gap:.75rem;justify-content:flex-end}.research-actions a{font-size:.8rem;font-weight:700}
-    .all-links{display:flex;flex-wrap:wrap;gap:1rem;margin-top:1.25rem}.all-links a{font-size:.88rem;font-weight:700}
-    @media(max-width:760px){.hero{grid-template-columns:minmax(0,1fr);padding:2.6rem 0 2rem}.hero h1{font-size:clamp(3rem,16vw,4rem)}.portrait{max-width:230px}.highlights{grid-template-columns:1fr}.highlight{padding:.65rem .1rem}.highlight+.highlight{border-left:0;border-top:1px solid var(--color-border)}.research-item{grid-template-columns:1fr}.research-actions{justify-content:flex-start}}
+    @media(max-width:760px){.hero{grid-template-columns:minmax(0,1fr);padding:2.6rem 0 2rem}.hero h1{font-size:clamp(3rem,16vw,4rem)}.portrait{max-width:230px}}
   </style>
 </head>
 <body>
@@ -64,14 +32,13 @@ const github = SOCIAL_LINKS.find((link) => link.label === 'GitHub');
       <div>
         <h1>Senith<br />Jayakody</h1>
         <p class="academic-id">Electrical and Electronic Engineering Graduate · University of Peradeniya</p>
-        <p class="bio">I currently work as an AI Research and Development Engineer at <a href="https://farbe.lk/" target="_blank" rel="noopener noreferrer">FARBE Technologies</a>, developing and evaluating signal- and image-processing methods.</p>
-        <p class="bio">Previously, I was a Research Assistant at <a href="https://marcuop.netlify.app/" target="_blank" rel="noopener noreferrer">MARC</a>, University of Peradeniya, working with <a href="https://eng.pdn.ac.lk/deee/index.php/people/RoshanG" target="_blank" rel="noopener noreferrer">Prof. Roshan Godaliyadda</a>, <a href="https://eng.pdn.ac.lk/deee/people/ParakramaE" target="_blank" rel="noopener noreferrer">Prof. Parakrama Ekanayake</a>, and <a href="https://eng.pdn.ac.lk/deee/people/VijithaH" target="_blank" rel="noopener noreferrer">Prof. Vijitha Herath</a>. My research spans signal processing, machine learning, computational imaging, and intelligent sensing.</p>
+        <p class="bio">I currently work as an AI Research and Development Engineer at <a href="https://farbetechnologies.ai/" target="_blank" rel="noopener noreferrer">FARBE Technologies</a>. Previously, I was a Research Assistant at <a href="https://pdnmarc.github.io/" target="_blank" rel="noopener noreferrer">the Multidisciplinary AI Research Centre (MARC)</a>, University of Peradeniya, working with <a href="https://eng.pdn.ac.lk/deee/index.php/people/RoshanG" target="_blank" rel="noopener noreferrer">Prof. Roshan Godaliyadda</a>, <a href="https://eng.pdn.ac.lk/deee/people/ParakramaE" target="_blank" rel="noopener noreferrer">Prof. Parakrama Ekanayake</a>, and <a href="https://eng.pdn.ac.lk/deee/people/VijithaH" target="_blank" rel="noopener noreferrer">Prof. Vijitha Herath</a>.</p>
+        <p class="bio">My research interests include signal processing, statistical learning, machine learning, computational imaging, and generative modeling. My research experience spans electrohysterography signal analysis, multispectral imaging, diffusion models, and implicit neural representations, with an emphasis on rigorous evaluation and methods grounded in real-world data.</p>
         <nav class="actions" aria-label="Profile resources">
-          <a class="btn" href={url('/publications')}>Publications</a>
-          <a class="btn btn-outline" href={url('/resume.pdf')} target="_blank">Download CV</a>
+          <a class="btn" href={url('/resume.pdf')} target="_blank" rel="noopener noreferrer">Download CV</a>
           {scholar && <a class="btn btn-outline" href={scholar.href} target="_blank" rel="noopener noreferrer">Google Scholar</a>}
           {github && <a class="btn btn-outline" href={github.href} target="_blank" rel="noopener noreferrer">GitHub</a>}
-          <a class="btn btn-outline" href={url('/projects')}>Projects</a>
+          {SOCIAL_LINKS.filter(({ label }) => label === 'LinkedIn' || label === 'Email').sort((a,b) => b.label.localeCompare(a.label)).map(({ label, href }) => <a class="btn btn-outline" href={href} target={label === 'Email' ? undefined : '_blank'} rel={label === 'Email' ? undefined : 'noopener noreferrer'}>{label}</a>)}
         </nav>
       </div>
       <div class="portrait">
@@ -79,37 +46,6 @@ const github = SOCIAL_LINKS.find((link) => link.label === 'GitHub');
       </div>
     </section>
 
-    <section class="highlights" aria-label="Academic highlights">
-      <div class="highlight"><strong>B.Sc. Eng. (Hons.)</strong><span>First Class Honours</span></div>
-      <div class="highlight"><strong>GPA 3.85/4.00</strong><span>University of Peradeniya</span></div>
-      <div class="highlight"><strong>4 peer-reviewed publications</strong><span>1 journal article · 3 conference papers</span></div>
-    </section>
-
-    <section aria-labelledby="selected-research-heading">
-      <div class="section-head">
-        <div><h2 id="selected-research-heading">Selected Research</h2></div>
-        <p>Methodological and application-driven work</p>
-      </div>
-      <div class="research-list">
-        {selectedResearch.map((item) => (
-          <article class="research-item">
-            <div>
-              <h3><a href={url(`/projects#${item.id}`)}>{item.title}</a></h3>
-              <p>{item.summary}</p>
-              <p class="research-context">{item.context}</p>
-            </div>
-            <div class="research-actions">
-              <a href={url(`/projects#${item.id}`)}>Project</a>
-              {item.project?.actions?.slice(0, 2).map((action) => <a href={action.url} target="_blank" rel="noopener noreferrer">{action.label}</a>)}
-            </div>
-          </article>
-        ))}
-      </div>
-      <div class="all-links">
-        <a href={url('/projects')}>View All Projects →</a>
-        <a href={url('/publications')}>View All Publications →</a>
-      </div>
-    </section>
   </main>
   <Footer />
 </body>

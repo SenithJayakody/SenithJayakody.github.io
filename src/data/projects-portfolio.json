@@ -68,7 +68,11 @@
     "description": "Investigated transmission-mode multispectral imaging and machine-learning regression methods for estimating Microcystis cell concentration and ELISA-equivalent microcystin concentration in water samples, with emphasis on non-destructive optical measurements and quantitative analysis.",
     "highlights": ["Transmission-mode multispectral imaging.", "Spectral feature extraction and regression.", "Microcystis cell-concentration estimation.", "Comparison with reference measurements for microcystin estimation."],
     "tags": ["Environmental Sensing", "Multispectral Imaging", "Optical Measurement", "Regression"],
-    "output": {"label": "Manuscript in preparation", "title": "Experimental work completed; manuscript preparation continues"},
+    "output": {"label": "Manuscript under review at Scientific Reports", "title": "Transmission-Mode Multispectral Imaging for Estimation of Microcystis spp. Cell Concentration and ELISA-Equivalent Microcystin Concentration in Water"},
+    "actions": [
+      {"label": "Paper", "url": "https://arxiv.org/abs/2611.16859"},
+      {"label": "Code", "url": "https://github.com/SenithJayakody/microcystis-microcystin-msi"}
+    ],
     "image": "/images/projects/microcystis-msi.webp",
     "imageAlt": "Conceptual cyanobacteria in a water sample under transmission-mode multispectral illumination"
   },
